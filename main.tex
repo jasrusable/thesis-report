@@ -10,27 +10,31 @@
 \begin{document}
 
 \maketitle
-\pagenumbering{gobble}
+\thispagestyle{empty}
+
+\pagenumbering{roman}
+\setcounter{page}{0}
 
 \newpage
-\input{plagiarism_declaration/plagiarism_declaration.tex}
+\input{includes/plagiarism_declaration.tex}
 
 \newpage
-\input{acknowledgments/acknowledgments.tex}
+\input{includes/acknowledgments.tex}
 
 \newpage
-\input{abstract/abstract.tex}
+\input{includes/abstract.tex}
 
 \newpage
 \tableofcontents
 
-\newpage
-\input{introduction/introduction.tex}
-
-\newpage
-\input{related_work/related_work.tex}
-
 \pagenumbering{arabic}
+\setcounter{page}{0}
+
+\newpage
+\input{includes/introduction.tex}
+
+\newpage
+\input{includes/related_work.tex}
 
 \newpage
 
