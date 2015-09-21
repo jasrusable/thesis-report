@@ -2,20 +2,32 @@
 In the sections to follow, exsiting indoor positioning systems will be discussed. Two main branches of technologies will be covered, namely radio and non-radio technologies.
 
 \subsection{Radio technologies}
-\subsubsection{Wi-Fi based systems}
-Intensity measurements.
-\cite{Test}
+Radio technologies
 
-\subsubsection{Bluetooth}
-Proximity solution.
+\subsubsection{Wi-Fi based systems}
+Wi-Fi based technologies are based on measurements such as TOA (time of arrival), TDOA (time difference of arrival) and DOA (direction of arrival). However these techniques are severly impared when line of sight is not achievable. These techniques also suffer due to objects such as walls and floors and other objects which attenuate and reflect the signals, directly affecting accuracies.
+
+An alternavte Wi-Fi based geolocation method has been explored which makes use of relative signal strengths bewteen transmitters and recievers. So instead of measuring the time or angle of signals, the signal strengh is used to determine location. This negatates many of the above mentioned deficiencies. A similar system has been employed by animal trackers with directional antennas.
+\cite{yongguang_chen_signal_2002}
+
+\subsubsection{Bluetooth systems}
+Bluetooth positioning works by using proximities, as apposed to angulation or lateration. As such, exact locations are not attainable using these techniques. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
+
+Apple has developed a protocol called iBeacon. This porotocol makes use fo Bluetooth proximity techniques in order to enable smart devices to perform actions when in close proximity to iBeacon.
+\cite{_everything_????}
 
 \subsubsection{Choke point concepts}
-RFID.
+Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. Many chocke point sensors work with passive radio-frequency identification (RFID) tags which do not report distances or signal strengths.
+\cite{reza_investigation_2008}
+
+\subsubsection{Grid concepts}
+Grid concepts employ a dense network of low-range reciervers arranged in a known pattern. A tagged object will be sensed by only a few nearby, networks recievers. By determining which recievers and tag is sensed by, a rough approximation of the location of the tagged object can be made.
 
 \subsubsection{Others}
 Briefly mention others.
 
 \subsection{Non-radio technologies}
+
 \subsubsection{Magnetic positioning}
 Magnetic positioning is based on the iron inside buildings that craetes local variations in the Eaths magnetic field.
 
