@@ -43,7 +43,7 @@
 \newpage
 \section*{Abstract}
 	\addcontentsline{toc}{section}{Abstract}
-	Abstract goes here.
+	This paper investigates the viability of a new indoor positioning system which is to make use of the comparason of digitial imagery to 3D models. An exaple scenario would be a person wishing to know which room they are in within a building. A 3D model of the building exists. The person takes a few photographs of her surroundings, the photographs are then compared to the 3D model and the result is presented to the person. The main focus of this paper is on the matching of the images to the 3D model.
 
 \newpage
 \tableofcontents
@@ -54,7 +54,7 @@
 \newpage
 \section{Introduction}
 	\subsection{Subject of the Report}
-		This report concerns the investigation of a proposed alternative indoor positioning method. This proposed method makes use of the comparson of digital imagery to 3D model in order to determine position.
+		This report concerns the investigation of a proposed alternative indoor positioning method. This proposed method makes use of the comparson of digital imagery to 3D models in order to determine position.
 	
 	\subsection{Background to the Report}
 		The background to the report should go here.
@@ -62,9 +62,16 @@
 	\subsection{Objectives of the Report}
 		The objectives of this report are therefore to:
 		\begin{itemize}
-			\item discuss related work
-			\item propose the alternate method
-			\item describe the results of investigations
+			\item
+				discuss related work
+			\item
+				propose the alternate method
+			\item
+				present and discuss experimental results
+			\item
+				 consider future work
+			\item
+				draw conclusions
 		\end{itemize}
 	
 	\subsection{Scope and limitaions}
@@ -124,6 +131,39 @@
 	
 	\subsubsection{Inertial measurements}
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientaion along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning. Dead reckoning is the process of calculating ones current location by using previously determined positions with esimated speed and orientation over some time. This yields relative position estimations. Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the succeptability of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
+
+\newpage
+\section{Proposed method}
+	\subsection{The 3D model}
+		\subsubsection{Data acqusition}
+			Direct measurements
+				Tape measure, theodolite, plans etc
+			Point clouds
+				I used a point cloud
+				From laser scanning
+				Resolution/precision of the point cloud
+				Cleaning up the point cloud
+				Standardizing the point cloud (uniform resolution)
+		\subsubsection{Model creation}
+			Automated techniques failed
+			Model created with Blender + point cloud
+			Discuss level of detail
+				Elements (degree of detail)
+					Include conduate, wall plugs, whiteboard seams etc
+				Lighting/shadows
+					Position of lights and shadows, type of lights
+				Texture
+					Rough texture for carpet, smooth texture for glass panel on door
+				Image draping
+					Image drapped over air vent
+					
+				
+
+\section{Experimental implementaion}
+
+\section{Discussions}
+
+\section{Conclusions and future work}
 
 \newpage
 \printbibliography
