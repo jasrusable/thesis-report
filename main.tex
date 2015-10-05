@@ -22,7 +22,7 @@
 	\addcontentsline{toc}{section}{Plagiarism Declaration}
 	\begin{enumerate}
 		\item
-			I know that plagiarism means taking and using the ideas, writings, works or inventions of another as if they were one's own. I know that plagiarism not only includes verbatim copying, but also the extensive use of another person's ideas without proper acknowledgment (which includes the proper use of quotation marks). I know that plagiarism covers this sort of use of material found in textual sources and from the Internet.
+			I know that plagiarism means taking and using the ideas, writings, works or inventions of another as if they were one's own. I know that plagiarism not only includes verbatim copying, but also the extensive use of another person's ideas without proper acknowledgement (which includes the proper use of quotation marks). I know that plagiarism covers this sort of use of material found in textual sources and from the Internet.
 		\item
 			I acknowledge and understand that plagiarism is wrong.
 		\item
@@ -36,8 +36,8 @@
 	Jason David Russell
 
 \newpage
-\section*{Acknowledgments}
-	\addcontentsline{toc}{section}{Acknowledgments}
+\section*{Acknowledgements}
+	\addcontentsline{toc}{section}{Acknowledgements}
 	I acknowledge everything.
 
 \newpage
@@ -54,10 +54,11 @@
 \newpage
 \section{Introduction}
 	\subsection{Subject of the Report}
-		This report concerns the investigation of a proposed alternative indoor positioning method. This proposed method makes use of the comparson of digital imagery to 3D models in order to determine position.
+		This report concerns the viability of an alternate indoor positioning method. The method involves comparing a photograph to a 3D model in order to determine the location of the photographer.
 	
 	\subsection{Background to the Report}
 		The background to the report should go here.
+		The primary aim of this paper is to investigate the viability of using the comparison of digital imagery to 3D models as an alternate indoor positioning system.
 	
 	\subsection{Objectives of the Report}
 		The objectives of this report are therefore to:
@@ -107,7 +108,7 @@
 		\cite{yongguang_chen_signal_2002}
 	
 	\subsubsection{Blue-tooth systems}
-		Blue-tooth positioning works by using proximities, as apposed to angulation or lateration. As such, exact locations are not attainable using these techniques. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
+		Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using these techniques. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
 	
 		Apple has developed a protocol called iBeacon. This protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to iBeacon.
 		\cite{_everything_????}
@@ -126,7 +127,7 @@
 		Non-radio technologies which can be used for indoor positioning will be discussed below. These systems can provide increased accuracy at the expense of increased costs of equipment and additional installations.
 	
 	\subsubsection{Magnetic positioning}
-		Magnetic positioning takes advantage of the way iron in buildings affects the Earths magnetic field. The iron in buildings creates local variations in the Earths magnetic field which can then be sensed by compases to map indoor locations.
+		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations.
 		\cite{supreeth_sudhakaran_geospatial_2014}
 	
 	\subsubsection{Inertial measurements}
@@ -134,12 +135,22 @@
 
 \newpage
 \section{Proposed method}
-	The aim of this method is to determine the viability of using the comparason of digitial imagery to 3D models as an alternate indoor positioning system. This method of indoor positioning depends on whether or not a photograph can be adequately matched to a rendered image of a 3D model. This is the main focus of this investigation.
+	There are two main requirements for this proposed method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be queried against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
+	
+	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are images and so this permits the use of advanced and robust image recognition software to perform the matching.
+	
+	
 	
 	\subsection{Theory}
 		Explain briefly how feature detection and matching works, how this compares/relates images. Detail is covered in following sections.
 		
-		There are two main requirements for this proposed method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene in that environment. The premise is that the photograph could be queried against the 3D model in order to determine where the photograph was taken within the 3D model. The querying of the photograph against the model presents a problem, the problem is that the photograph and the 3D model are not intrinsically comparable. A solution to this problem is to create many renderings throughout the model and compare these renderings to the photograph.
+		\subsubsection{Photogrammetric principles}
+			Discuss photogrammetric principles: Exterior + interior parameters, 
+		
+		\subsubsection{My principles}
+			
+		
+		From here onwards a rendered image will be refereed to as a query image, and the photograph will be refereed to as the test image.
 		
 		
 	\subsection{The 3D model}
