@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -18,8 +18,8 @@
 \setcounter{page}{0}
 
 \newpage
-\section*{Plagiarism Declaration}
-	\addcontentsline{toc}{section}{Plagiarism Declaration}
+\chapter*{Plagiarism Declaration}
+	\addcontentsline{toc}{chapter}{Plagiarism Declaration}
 	\begin{enumerate}
 		\item
 			I know that plagiarism means taking and using the ideas, writings, works or inventions of another as if they were one's own. I know that plagiarism not only includes verbatim copying, but also the extensive use of another person's ideas without proper acknowledgement (which includes the proper use of quotation marks). I know that plagiarism covers this sort of use of material found in textual sources and from the Internet.
@@ -36,13 +36,13 @@
 	Jason David Russell
 
 \newpage
-\section*{Acknowledgements}
-	\addcontentsline{toc}{section}{Acknowledgements}
+\chapter*{Acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
 	I acknowledge everything.
 
 \newpage
-\section*{Abstract}
-	\addcontentsline{toc}{section}{Abstract}
+\chapter*{Abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
 	This paper investigates the viability of a new indoor positioning system which is to make use of the comparison of digital imagery to 3D models. An example scenario would be a person wishing to know which room they are in within a building. A 3D model of the building exists. The person takes a few photographs of her surroundings, the photographs are then compared to the 3D model and the result is presented to the person. The main focus of this paper is on the matching of the images to the 3D model.
 
 \newpage
@@ -52,14 +52,14 @@
 \setcounter{page}{0}
 
 \newpage
-\section{Introduction}
-	\subsection{Subject of the Report}
+\chapter{Introduction}
+	\section{Subject of the Report}
 		This report concerns the viability of an alternate indoor positioning method. The method involves comparing a photograph to a 3D interior model in order to determine the location of the photographer.
 	
-	\subsection{Background to the Report}
+	\section{Background to the Report}
 		3D interior models are becoming more and more prominent. New technological advancements and techniques are making it cheaper, quicker and easier to generate interior 3D models. Combine the recent prominence of 3D interior models with the ubiquity of camera equipped smart phones and a new indoor positioning system presents itself. This system depends on the matching of a photograph to a 3D interior model in order to locate the photographer. Thus, the primary focus of this paper is on the matching of a photograph to a 3D interior model.
 	
-	\subsection{Objectives of the Report}
+	\section{Objectives of the Report}
 		The objectives of this report are therefore to:
 		\begin{itemize}
 			\item
@@ -74,17 +74,17 @@
 				draw conclusions
 		\end{itemize}
 	
-	\subsection{Scope and limitations}
+	\section{Scope and limitations}
 		Some scope and limitation stuff goes here.
 	
-	\subsection{Plan of Development}
+	\section{Plan of Development}
 		This report begins by looking at work related to indoor positioning systems. Following on from that, the alternate method will be proposed. Thereafter results of investigations will be presented and discussed.
 
 \newpage
-\section{Related Work}
+\chapter{Related Work}
 	In the sections to follow, existing indoor positioning systems will be discussed. Two main branches of technologies will be covered, namely radio and non-radio technologies.
 	
-	\subsection{Radio technologies}
+	\section{Radio technologies}
 		Any wireless technology can in theory, be used for positioning. Three main techniques exist, each one will be briefly outlined below. The sections to follow will look at existing systems which employ these techniques.
 	
 	\paragraph{Time of arrival}
@@ -100,60 +100,46 @@
 		Angle of arrival is the angle from which a signal is received at a receiver. Angle of arrival is typically determined by using the time difference of arrival between multiple antennas in a sensor array. Position is determined using multi-angulation.
 		Angle of arrival systems also suffer from effects such as multi-path.
 	
-	\subsubsection{Wi-Fi based systems}
+	\subsection{Wi-Fi based systems}
 		Wi-Fi based technologies are based on measurements such as TOA (time of arrival), TDOA (time difference of arrival) and DOA (direction of arrival). However these techniques are severely impaired when line of sight is not achievable. These techniques also suffer due to objects such as walls and floors and other objects which attenuate and reflect the signals, directly affecting accuracies.
 	
 		An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. So instead of measuring the time or angle of signals, the signal strength is used to determine location. This negates many of the above mentioned deficiencies. A similar system has been employed by animal trackers with directional antennas.
 		\cite{yongguang_chen_signal_2002}
 	
-	\subsubsection{Blue-tooth systems}
+	\subsection{Blue-tooth systems}
 		Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using these techniques. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
 	
 		Apple has developed a protocol called iBeacon. This protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to iBeacon.
 		\cite{_everything_????}
 	
-	\subsubsection{Choke point concepts}
+	\subsection{Choke point concepts}
 		Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. Many choke point sensors work with passive radio-frequency identification (RFID) tags which do not report distances or signal strengths.
 		\cite{reza_investigation_2008}
 	
-	\subsubsection{Grid concepts}
+	\subsection{Grid concepts}
 		Grid concepts employ a dense network of low-range receivers arranged in a known pattern. A tagged object will be sensed by only a few nearby, networks receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made.
 	
-	\subsubsection{Others}
+	\subsection{Others}
 		Various other systems exist but will not be discussed further. These include ultra-wide band (UWB), infrared (IR), visible light communication, and ultrasound.
 	
-	\subsection{Non-radio technologies}
+	\section{Non-radio technologies}
 		Non-radio technologies which can be used for indoor positioning will be discussed below. These systems can provide increased accuracy at the expense of increased costs of equipment and additional installations.
 	
-	\subsubsection{Magnetic positioning}
+	\subsection{Magnetic positioning}
 		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations.
 		\cite{supreeth_sudhakaran_geospatial_2014}
 	
-	\subsubsection{Inertial measurements}
+	\subsection{Inertial measurements}
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning. Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
 
 \newpage
-\section{Proposed method}
-	There are two main requirements for this proposed method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be queried against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
+\chapter{Proposed method}
+	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be queried against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
 	
-	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are images and so this permits the use of advanced and robust image recognition software to perform the matching.
-	
-	
-	
-	\subsection{Theory}
-		Explain briefly how feature detection and matching works, how this compares/relates images. Detail is covered in following sections.
+	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching. In the following sections, the processes of creating the 3D interior model, taking a photogragh and comparing the photograph to the renders of the 3D model will be discussed in detail.
 		
-		\subsubsection{Photogrammetric principles}
-			Discuss photogrammetric principles: Exterior + interior parameters, 
-		
-		\subsubsection{My principles}
-			
-		
-		From here onwards a rendered image will be refereed to as a query image, and the photograph will be refereed to as the test image.
-		
-		
-	\subsection{The 3D model}
-		\subsubsection{Data acquisition}
+	\section{The 3D model}
+		\subsection{Data acquisition}
 			Direct measurements
 				Tape measure, theodolite, plans etc
 			Point clouds
@@ -162,7 +148,7 @@
 				Resolution/precision of the point cloud
 				Cleaning up the point cloud
 				Standardizing the point cloud (uniform resolution)
-		\subsubsection{Model creation}
+		\subsection{Model creation}
 			Automated techniques failed
 			Model created with Blender + point cloud
 			Discuss level of detail
@@ -174,18 +160,18 @@
 					Rough texture for carpet, smooth texture for glass panel on door
 				Image draping
 					Image draped over air vent
-		\subsubsection{Python Framework}
+		\subsection{Python Framework}
 			How feature detection works
 			How feature matching works
 			Homogrophy
 			SIFT/SURF/ORB
 					
 
-\section{Experimental implementation results}
+\chapter{Experimental implementation results}
 
-\section{Discussions}
+\chapter{Discussions}
 
-\section{Conclusions and future work}
+\chapter{Conclusions and future work}
 
 \newpage
 \printbibliography
