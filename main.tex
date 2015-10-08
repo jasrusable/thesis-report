@@ -133,22 +133,34 @@
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning. Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
 
 \newpage
-\chapter{Proposed method}
+\chapter{Method}
 	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be queried against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
 	
-	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching. In the following sections, the processes of creating the 3D interior model, taking a photogragh and comparing the photograph to the renders of the 3D model will be discussed in detail.
+	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching.
+	
+	In the following sections, the processes of creating the 3D interior model, taking a photograph and comparing the photograph to the renders of the 3D model will be discussed in detail.
+	
+	The Geomatics Teaching Laboratory was used as the basis of this investigation. 
 		
 	\section{The 3D model}
-		\subsection{Data acquisition}
-			Direct measurements
-				Tape measure, theodolite, plans etc
-			Point clouds
-				I used a point cloud
-				From laser scanning
-				Resolution/precision of the point cloud
-				Cleaning up the point cloud
-				Standardizing the point cloud (uniform resolution)
+		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation of a 3D model which will be utilized to perform the comparison to a photograph in this alternate indoor positioning system.
+		
 		\subsection{Model creation}
+			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender.
+		
+			\subsubsection{Data acquisition}
+				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process. This data can come in the form of building plans, 
+				For this investigation, a laser scan of the Geomatics Teaching Laboratory was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. 
+				
+				Direct measurements
+					Tape measure, theodolite, plans etc
+				Point clouds
+					I used a point cloud
+					From laser scanning
+					Resolution/precision of the point cloud
+					Cleaning up the point cloud
+					Standardizing the point cloud (uniform resolution)
+
 			Automated techniques failed
 			Model created with Blender + point cloud
 			Discuss level of detail
