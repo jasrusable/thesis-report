@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[backend=bibtex]{biblatex}
+\graphicspath{{./images/}}
 \addbibresource{sources.bib}
 
 \title{Indoor positioning using the comparison of digital imagery to 3D models}
@@ -48,6 +49,9 @@
 \newpage
 \tableofcontents
 
+\newpage
+\listoffigures
+
 \pagenumbering{arabic}
 \setcounter{page}{0}
 
@@ -87,16 +91,31 @@
 	\section{Radio technologies}
 		Any wireless technology can in theory, be used for positioning. Three main techniques exist, each one will be briefly outlined below. The sections to follow will look at existing systems which employ these techniques.
 	
-	\paragraph{Time of arrival}
+	\subsection{Time of arrival}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{time_of_arrival}
+			\caption{Time of arrival}
+		\end{figure}
 		Time of arrival (or time of flight) is the travel time of a radio signal from a single transmitter to a single remote receiver. The basic observable is time. A Distance can be directly calculated using the known propagation velocity of signals with the basic observable time. Location can then be determined using multi-lateration. This requires a setup of at least one receiver and three transmitters or vise versa.
 		Required with such systems is the synchronization of clocks between receivers and transmitters.
 		Time of travel systems suffer greatly from effects such as multi-path.
 		\cite{k._pahlavan_wideband_1998}
 	
-	\paragraph{Received signal strength indication}
+	\subsection{Received signal strength indication}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{rssi}
+			\caption{RSSI}
+		\end{figure}
 		Received signal strength indication is a measure of the power level received by a sensor. Because of how radio waves propagate, distance can be approximated between a transmitter and receiver based on the relationship between the transmitted and received signal strength. Multi-lateration can be used to determine locality of a sensor.
 	
-	\paragraph{Angle of arrival}
+	\subsection{Angle of arrival}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{angle_of_arrival}
+			\caption{Angle of arrival}
+		\end{figure}
 		Angle of arrival is the angle from which a signal is received at a receiver. Angle of arrival is typically determined by using the time difference of arrival between multiple antennas in a sensor array. Position is determined using multi-angulation.
 		Angle of arrival systems also suffer from effects such as multi-path.
 	
