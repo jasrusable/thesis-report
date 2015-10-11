@@ -153,7 +153,7 @@
 
 \newpage
 \chapter{Method}
-	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be matched against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
+	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be matched against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer. The focus of this paper is on the comparison of the photograph and the model, as if this is not feasible, the premise is flawed.
 	
 	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching.
 	
@@ -165,7 +165,7 @@
 		\caption{GTL Door area}
 	\end{figure}
 	
-	The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT.
+	The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximise the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge. More on this later.
 	
 	\newpage
 	\section{The 3D model}
@@ -216,20 +216,45 @@
 					\caption{Model with increased detail}
 				\end{figure}
 				
-				The image above shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All of theses features have been modeled off of the point cloud and so the model is an accurate representation of the actual room in terms of relative scale etc.
+				The image above shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
+				
 			
 			\subsubsection{Draft}
-				Automated techniques failed
-				Model created with Blender + point cloud
-				Discuss level of detail
-					Elements (degree of detail)
-						Include conduate, wall plugs, white-board seams etc
-					Lighting/shadows
-						Position of lights and shadows, type of lights
-					Texture
-						Rough texture for carpet, smooth texture for glass panel on door
-					Image draping
-						Image draped over air vent
+				3D model
+					Model creation
+						data acquisition
+							data from laser scan -> Point cloud
+						data preprocessing
+							cleaned point cloud -> removed unneeded points
+							uniform density
+						constructing model from raw data
+							Intro to solid modelling
+							Automated techniques failed
+							Boundary rep
+							Created model manually with blender + PC
+					Model level of detail
+						intro to LOD
+						elements (degree of detail)
+							include conduate, wall plugs, white-board seams etc
+						lighting/shadows
+							position of lights and shadows, type of lights
+						texture
+							rough texture for carpet, smooth texture for glass panel on door
+						image draping
+							image draped over air vent
+					creating renderings of model
+						lighting types
+						shadows
+						intensities
+						reflections
+						light positions
+		\subsection{Photograph}
+			\subsubsection{Draft}
+				Purpose of the photograph
+				Acquisition of the photograph
+				Position of photograph
+				
+			
 		\subsection{Python Framework}
 			How feature detection works
 			How feature matching works
