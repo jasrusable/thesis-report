@@ -159,16 +159,24 @@
 	
 	In the following sections, the processes of creating the 3D interior model, taking a photograph and comparing the photograph to the renders of the 3D model will be discussed in detail.
 	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.6\textwidth]{gtl_door_area}
+		\caption{GTL Door area}
+	\end{figure}
+	
 	The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT.
-		
+	
+	\newpage
 	\section{The 3D model}
-		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation of a 3D model which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system.
+		3D modeling can be described as the process of developing a mathematical representation of a three dimensional space using specialized software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation of a 3D model which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system.
 		
 		\subsection{3D Interior Model creation}
 			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender. In order to accurately model an existing environment, raw data such as measurements or point clouds is needed to serve as a basis for the model creation, it serves as the initial building block for the model. This raw data can be in a variety of forms, this will be discussed in the section to follow.
 		
 			\subsubsection{Data acquisition}
-				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference. This data can come in the form of building plans, measured distances and directions or point clouds etc.
+				In order to create an accurate 3D model of a building, data is required in order to aid the modeling process and serve as a template or reference. This data can come in the form of building plans, measured distances and directions or point clouds etc.
+				
 				For this investigation, a point cloud was used. A laser scan of the Geomatics Teaching Laboratory (GTL) was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The end result was a high resolution point cloud of the rooms interior. 
 				
 				{{Insert Point Cloud image}}.
@@ -176,31 +184,43 @@
 			\subsubsection{Data preprocessing}
 				During a scan, it often happens that a scanner captures points which are irrelevant. These points may include points which are considered unneeded in a particular scan. Typical examples of such cases leading to irrelevant points are people walking through a scan, reflections of the scan laser beam off of surfaces or points from objects which are deemed irrelevant. Point clouds can be cleaned manually by hand, or using automated techniques. The point cloud in question was manually cleaned in a software program called CloudCompare.
 				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{cleaned_pc}
+					\caption{Cleaned point cloud of focus area}
+				\end{figure}
+				
 				The density of the point cloud was also made to be consistent. Due to laser beam divergence, points nearer to the scanner are packed more densely. An operation was performed on the point cloud which ensured uniform point density throughout the cloud. This processes reduces the point cloud's size which in turn makes handling the point cloud less computationally intensive.
 				\cite{_selection_????}
 				
-				{{Insert Cleaned Point Cloud image}}.
-				
 			\subsubsection{Constructing the model}
-				Maybe explain B-rep and CSG?
-				Model constructed using Blender.
-				PC serves as template for modelling.
-					Fitting surfaces to points.
+				Solid modeling is a consistent set of principles for mathematical and computer modeling of three-dimensional solids which forms the foundation of computer-aided model design. 
+				\cite{vadim_shapiro_solid_2001}
+				
+				Boundary representation (B-rep) is a solid representation scheme. It is a method for representing shapes using limits. In boundary representation a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
+				\cite{hongxin_zhang_introduction_2007}
+				
+				The model in this investigation was created using boundary representation. A per-processed and cleaned point cloud of GTL was used to serve as a template. The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender. Faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling.
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{simple_model_with_pc}
+					\caption{Front view of simple model}
+				\end{figure}
+				
 			
-				{{Insert model construction image}}.
-			
-
-			Automated techniques failed
-			Model created with Blender + point cloud
-			Discuss level of detail
-				Elements (degree of detail)
-					Include conduate, wall plugs, white-board seams etc
-				Lighting/shadows
-					Position of lights and shadows, type of lights
-				Texture
-					Rough texture for carpet, smooth texture for glass panel on door
-				Image draping
-					Image draped over air vent
+			\subsubsection{Draft}
+				Automated techniques failed
+				Model created with Blender + point cloud
+				Discuss level of detail
+					Elements (degree of detail)
+						Include conduate, wall plugs, white-board seams etc
+					Lighting/shadows
+						Position of lights and shadows, type of lights
+					Texture
+						Rough texture for carpet, smooth texture for glass panel on door
+					Image draping
+						Image draped over air vent
 		\subsection{Python Framework}
 			How feature detection works
 			How feature matching works
