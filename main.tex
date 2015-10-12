@@ -159,6 +159,8 @@
 	
 	In the following sections, the processes of creating the 3D interior model, taking a photograph and comparing the photograph to the renders of the 3D model will be discussed in detail.
 	
+	The model is to be as close to the photograph as possible to try and get as high quality of a match as possible. {{elaborate}}
+	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.6\textwidth]{gtl_door_area}
@@ -217,24 +219,43 @@
 				\end{figure}
 				
 				The image above shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
+				
 		\subsection{Level of detail}
 			In terms of 3D modelling, level of detail refers to how thoroughly real-world features have been modelled and how much those model features resemble their real-world counterparts.
 			
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.6\textwidth]{level_of_detail_example}
-				\caption{Level of detail exaple}
+				\caption{Level of detail example}
 			\end{figure}
 			
-			In the figure above, a sphere has been modelled at various levels of detail, decreasing from left to right.
+			The figure above illustrates the concept of level of detail. A sphere has been modelled at various levels of detail, decreasing from left to right.
 			
 			\subsubsection{Features}
-				As many features as possible have been modelled within the area of investigation.
-				{{why?}}
+				As many features as possible have been modelled within the area of investigation. This has been done in order to maximise the chance of a high quality match to the photograph as well as to facilitate testing and experimenting with the effect of various levels of detail on the accuracy of a matches. 
+				
+				
 				This includes the modelling of the wall skirting, the electrical wire conduate, as well as fine details around the whiteboard. 
 				
 			
 			\subsubsection{Lighting}
+				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a model as well as its accuracy. When creating the model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail below. 
+				
+				\paragraph{Light source}
+					The GTL room is illuminated by light panels, each containing three fluorescent tubes. The panels are rectangular with dimensions 0.5m by 1.5m. Additionally, light enters the room from the windows along the north wall, as well as through the glass panels within the door. So there are three sources of light illuminating the room. When modelling light sources, there are a few considerations which need to be made:
+					\subparagraph{Colour temperature}
+						The colour temperature of a light source is the temperature of an ideal black-body radiator that radiates light of comparable hue to that of the light source. Colour temperatures are typically statued in the unit of absolute temperature, the Kelvin, with the symbol K.
+						\begin{figure}[h!]
+							\centering
+							\includegraphics[width=0.6\textwidth]{colour_temperature}
+							\caption{Colour temperatures}
+						\end{figure}
+						The figure above shows how colour temperatures relate to real world scenarios.
+				
+				\paragraph{Position of lights}
+				
+				In so far as this investigation is concerned, the model is to be as realistic as possible. 
+			
 				How lights are positioned. How shadows fall.
 				Type of lights used.
 				Different reflectivity of different surfaces.
@@ -268,15 +289,15 @@
 						intensities
 						reflections
 						light positions
-		\subsection{Photograph}
-			\subsubsection{Draft}
+		\section{Photograph}
+			\subsection{Draft}
 				Purpose of the photograph
 				Acquisition of the photograph
 				Position of photograph
 				
 			
-		\subsection{Python Framework}
-			\subsubsection{Draft}
+		\section{Python Framework}
+			\subsection{Draft}
 				How feature detection works
 				How feature matching works
 				Homogrophy
