@@ -338,8 +338,18 @@
 			The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thins the test image lies within the query image. This box is defined by an affine transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
 			
 			\subsection{Performing the comparison}
-				\subsubsection{Finding features}
-					The first step involved in performing a comparison requires determining what are known as features, or key points in an image. Key points represent specific patterns or features which are unique, can be easily tracked and which can be easily compared.
+				\subsubsection{Key points}
+					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked and which can be easily compared.
+					
+					To provide an example of what key points are, consider the image below:
+					
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.9\textwidth]{feature_building}
+						\caption{Feature building}
+					\end{figure}
+					
+					The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point.
 				
 			
 			\subsection{Draft}
