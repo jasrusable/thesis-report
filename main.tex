@@ -161,13 +161,23 @@
 	
 	The model is to be as close to the photograph as possible to try and get as high quality of a match as possible. {{elaborate}}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.6\textwidth]{gtl_door_area}
-		\caption{GTL Door area}
-	\end{figure}
-	
 	The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge. More on this later.
+	
+	\section{Photograph}
+		The test photograph for this investigation is of the front door section of the GTL room. The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue door is symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
+		
+		The photograph was taken using an iPhone 4S camera
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{gtl_door_area}
+			\caption{GTL Door area}
+		\end{figure}
+		
+		\subsection{Draft}
+			Purpose of the photograph
+			Acquisition of the photograph
+			Position of photograph
 	
 	\newpage
 	\section{The 3D model}
@@ -253,7 +263,7 @@
 						The figure above shows how colour temperatures relate to real world scenarios.
 				
 					\subparagraph{Position of lights}
-						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed. The overhead lights have been places in their respective real-world potions. An emmisive plane has been placed behind the glass panels of the door area in order to replicate the real-world lighting.
+						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed and calibrated. The overhead lights have been placed in their respective real-world potions. Three emmisive planes have been placed behind the glass panels of the door area in order to replicate the real-world lighting.
 						
 						\begin{figure}[h!]
 							\centering
@@ -265,7 +275,6 @@
 							\includegraphics[width=0.6\textwidth]{lights_behind_door}
 							\caption{Emmisive planes behind door replicate sunlight}
 						\end{figure}
-						{{Insert image of light planes behind door}}
 					
 					\subparagraph{Light intensity}
 						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real world lighting intensities in the model, each light source was adjusted individually and judged by simple visual inspection. 
@@ -276,7 +285,12 @@
 				
 				Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
 				\cite{e._paul_degarmo_materials_2003}
-				Particular attention has been paid to accurately representing surface characteristics of as many features as possible in the model. 
+				Particular attention has been paid to accurately representing surface characteristics of as many features as possible in the model.
+				The panels in the door are set to be smooth and transparent, replicating the real-world glass panes. 
+				The texture of the walls has been adjusted.
+				The texture of the floor has been roughened to replicate the carpet.
+				The whiteboards are smooth and glossy.
+				The gray pin board has a rough texture.
 			
 			\subsubsection{Draft}
 				3D model
@@ -307,12 +321,6 @@
 						intensities
 						reflections
 						light positions
-		\section{Photograph}
-			\subsection{Draft}
-				Purpose of the photograph
-				Acquisition of the photograph
-				Position of photograph
-				
 			
 		\section{Python Framework}
 			\subsection{Draft}
