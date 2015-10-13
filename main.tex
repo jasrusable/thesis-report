@@ -323,7 +323,25 @@
 						Discuss render parameters
 			
 		\section{Comparison of the model and photograph}
-			This section of the methodology deals with the matching of the photograph to the render of the 3D model.
+			This section deals with the matching of the photograph to the render of the 3D model. In order to facilitate the matching process, a Python program has been created.
+			
+			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
+			
+			The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
+			
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.9\textwidth]{feature_homography_example}
+				\caption{Feature homography}
+			\end{figure}
+			
+			The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thins the test image lies within the query image. This box is defined by an affine transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
+			
+			\subsection{Performing the comparison}
+				\subsubsection{Finding features}
+					The first step involved in performing a comparison requires determining what are known as features, or key points in an image. Key points represent specific patterns or features which are unique, can be easily tracked and which can be easily compared.
+				
+			
 			\subsection{Draft}
 				How feature detection works
 				How feature matching works
