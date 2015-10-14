@@ -318,15 +318,12 @@
 						\caption{Feature detection}
 					\end{figure}
 					
-					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. There are a number of algorithms which offer feature detection (SIFT, ORB, SURF). These will be discussed later.
-				
-			\newpage
-			\subsection{Draft}
-				How feature detection works
-				How feature matching works
-				Homogrophy
-				SIFT/SURF/ORB
+					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point.
+				\subsubsection{Describing key points}
+					Once key points have been identified, they need to be described. Feature vectors are created and describe a key point.
 					
+				\subsubsection{Matching key points}
+					Key points need to be matched. Their feature vectors are compared.
 
 \chapter{Results}
 	\section{Photograph}
