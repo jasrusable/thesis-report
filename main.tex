@@ -320,14 +320,14 @@
 					
 					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point.
 				\subsubsection{Describing key points}
-					Once key points have been identified, they need to be described. Feature vectors are created and describe a key point.
+					Once key points have been identified, they need to be described. The purpose of describing the key points is to enable the comparison of key points across images. The idea is that a real-world point will have a similar key point description within the images which capture the real-world point.
 					
 				\subsubsection{Matching key points}
-					Key points need to be matched. Their feature vectors are compared.
+					The final step of the comparison process is that of matching key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
 
 \chapter{Results}
 	\section{Photograph}
-		The test photograph for this investigation is of the front door section of the GTL room. The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue door is symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
+		The test photograph for this investigation is of the front door section of the GTL room. The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
 		
 		The photograph was taken using an iPhone 4S camera, which is actually an eight megapixel Sony Exmor R IMX 145.
 		
@@ -338,15 +338,25 @@
 		\end{figure}
 		
 	\section{3D model}
-		The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge. More on this later.
+		The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge. The model was created in an open source software package called Blender.
 		\subsection{Model creation}
 			\subsubsection{Data acquisition}
-				For this investigation, a point cloud was used. A laser scan of the Geomatics Teaching Laboratory (GTL) was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The end result was a high resolution point cloud of the rooms interior. 
+				In order to accurately model the scene of interest, a laser scan was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was take. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
 				{{Insert Point Cloud image}}.
 				
 			\subsubsection{Data cleaning}
-				The point cloud in question was manually cleaned in a software program called CloudCompare.
+				The point cloud in question was manually cleaned in a software program called CloudCompare. The purpose of cleaning the point cloud is to remove erroneous and superfluous data in order to increase the manageability of working with the point cloud.
+	
+				The first step cleaning the point cloud involved cutting out the sections which were not to be part of this investigation. This trivial process was performed in a software package called CloudCompare.
+				
+				{{Image of trimmed PC}}
+				
+				The second step in cleaning the point cloud involved removing points which existed outside of the rooms confines, such as points outside of the glass panels of the door.
+				
+				{{Image of cleaned PC}}
+ 
+				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was eroded to a resolution of 7mm. This removed many superfluous points and considerably reduced the file size of the point cloud.
 			
 			\subsubsection{Model construction}
 				The model in this investigation was created using boundary representation. A per-processed and cleaned point cloud of GTL was used to serve as a template. The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender. Faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling.
