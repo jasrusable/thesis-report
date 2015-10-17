@@ -367,9 +367,25 @@
 				
 				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
-				{{Image of model with walls}}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{simple_model_with_pc}
+					\caption{Walls, floor and air-conditioning duct modelled from the point cloud}
+					\label{fig:simple_model}
+				\end{figure}
 				
-				{{Image of model with more detail}}
+				In figure \ref{fig:simple_model} the walls and floor of the room have been modelled off of the point cloud. 
+				
+				Detail of the model was iteratively increased by modelling finer and finer details.
+				
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{model_with_increased_detail}
+					\caption{Model with increased detail}
+					\label{fig:more_complex_model}
+				\end{figure}
+				
+				Figure \ref{fig:more_complex_model} shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
 				
 				\paragraph{Lighting}
 				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
@@ -380,23 +396,17 @@
 					{{Image of modelled florescent lights}}
 				
 				\subparagraph{External lights}
-					In order to accurately model the natural light which penetrates though the glass panes of the door, emmive planes were placed behind the glass panes of the door section.
+					In order to accurately model the natural light which penetrates though the glass panes of the door, emmisive planes were placed behind the glass panes of the door section. These emmisive planes were each calibrated in order to best represent real-world conditions of the photograph.
+					
+					{{Image of emmisive planes behind doors}}
 				
-				\begin{figure}[h!]
-					\centering
-					\includegraphics[width=0.9\textwidth]{simple_model_with_pc}
-					\caption{Front view of simple model}
-				\end{figure}
 				
-				Detail of the model was iteratively increased by modelling finer and finer details.
 				
-				\begin{figure}[h!]
-					\centering
-					\includegraphics[width=0.9\textwidth]{model_with_increased_detail}
-					\caption{Model with increased detail}
-				\end{figure}
 				
-				The image above shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
+				
+				
+				
+				
 
 \chapter{Discussions}
 
