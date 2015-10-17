@@ -359,7 +359,28 @@
 				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was eroded to a resolution of 7mm. This removed many superfluous points and considerably reduced the file size of the point cloud.
 			
 			\subsubsection{Model construction}
-				The model in this investigation was created using boundary representation. A per-processed and cleaned point cloud of GTL was used to serve as a template. The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender. Faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling.
+				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme. It is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
+				\cite{hongxin_zhang_introduction_2007}
+				Boundary representation was selected as the solid representation scheme as it is very suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfect which ironically leads to a model which is more accurate, in that the model more accurately represents the real-world features or objects.
+				
+				The accuracy of the model is an important consideration for this investigation. The model was to be constructed as accurately as possible in order to maximise the chances of obtaining good quality matches, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
+				
+				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
+				
+				{{Image of model with walls}}
+				
+				{{Image of model with more detail}}
+				
+				\paragraph{Lighting}
+				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
+				An important consideration for lighting with regards to this investigation is that lighting can vary. This includes the the variation of natural light throughout the diurnal cycle as well as variations due to weather conditions. Variations in artificial lighting is also important, such variations include lights being on or off, varying brightness etc.
+				\subparagraph{Overhead lights}
+					Overhead lights consisted of panels of florescent lights uniformly spaced throughout the ceiling. The each panel contained three fluorescent tubes. Theses light panels were reconstructed in the model and mimicked using emmisive planes subtended within a rectangle.
+					
+					{{Image of modelled florescent lights}}
+				
+				\subparagraph{External lights}
+					In order to accurately model the natural light which penetrates though the glass panes of the door, emmive planes were placed behind the glass panes of the door section.
 				
 				\begin{figure}[h!]
 					\centering
