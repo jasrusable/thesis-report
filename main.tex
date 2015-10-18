@@ -162,33 +162,43 @@
 		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
 		\cite{supreeth_sudhakaran_geospatial_2014}
 		
-		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. 
+		%TODO: Needs work
+		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. The company provides an application which enables a user to map out a particular building, and allows users to navigate the created map.
+		 
 	
 	\subsection{Inertial measurements}
-		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning. Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
+		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning.
+		
+		Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. 
+		
+		Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
 
 \newpage
 \chapter{Method}
-	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph could be matched against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer. The focus of this paper is on the comparison of the photograph and the model.
+	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment, the second requirement is a photograph of a scene within that environment. The premise is that the photograph can be matched against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer. The focus of this paper is on the comparison of the photograph and the 3D model.
 	
-	The querying of the photograph against the model presents a problem, and that is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renderings are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching.
+	The querying of the photograph against the model presents a problem. The problem is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renders are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching.
 	
 	In the following sections, the processes of creating a 3D interior model, taking a photograph and comparing a photograph to renders of the 3D model will be discussed in detail.
 	
 	\section{Photograph}
-		In this alternate indoor positioning system, a photograph will be take by a person who wishes to know their location within an indoor environment. The photo will typically be take from a mobile device such as a smart phone or tablet.
+		In this alternate indoor positioning system, a photograph will be taken by a person who wishes to know their location within an indoor environment, which will have an associated 3D model. The photograph will typically be taken from a mobile device such as a smart phone or tablet.
 	
 	\newpage
 	\section{The 3D model}
-		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation of a 3D model which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system. In the subsections to follow, the process of creating a 3D model and associated renderings will be discussed and detailed.
+		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized computer software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system. In the subsections to follow, the process of creating a 3D model and associated renderings will be discussed and detailed.
 		
 		\subsection{Creating a 3D model}
-			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender. In order to accurately model an existing environment, raw data such as measurements or point clouds is needed to serve as a basis for the model creation, it serves as the initial building block for the model. This raw data can be in a variety of forms, this will be discussed in the section to follow.
+			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender. 
+			In order to accurately model an existing environment, raw data such as measurements or point clouds is needed to serve as a basis for the model creation. The raw data serves as the initial building block and reference for the model.
 		
 			\subsubsection{Data acquisition}
-				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference. This data can come in the form of building plans, measured distances and directions or point clouds etc.
-				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points in the point cloud.
-				Creating a model from building plans or other measurements involves defining model features in terms of parameters. There is a possibility that the measurements or plans do not accurately reflect the real-world environment in which case the model may contain inaccuracies. 
+				%TODO: Needs work
+				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference.
+				This data can come in the form of building plans, measured distances and directions or point clouds etc.
+				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points  within the point cloud.
+				Creating a model from building plans or other measurements involves defining model features in terms of parameters. 
+				It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the real-world environment.
 				
 			\subsubsection{Data preprocessing}
 				\paragraph{Laser scans}
@@ -280,33 +290,35 @@
 				
 				Discus 
 			
-			\subsubsection{Draft}
-				3D model
-					Model creation
-						data acquisition
-							data from laser scan -> Point cloud
-						data preprocessing
-							cleaned point cloud -> removed unneeded points
-							uniform density
-						constructing model from raw data
-							Intro to solid modelling
-							Automated techniques failed
-							Boundary rep
-							Created model manually with blender + PC
-					Model level of detail
-						intro to LOD
-						elements (degree of detail)
-							include conduate, wall plugs, white-board seams etc
-						lighting/shadows
-							position of lights and shadows, type of lights
-						texture
-							rough texture for carpet, smooth texture for glass panel on door
-						image draping
-							image draped over air vent
-					creating renderings of model
-						types of renderers + their differences
-						Cycles renderer used
-						Discuss render parameters
+			\iffalse
+				\subsubsection{Draft}
+					3D model
+						Model creation
+							data acquisition
+								data from laser scan -> Point cloud
+							data preprocessing
+								cleaned point cloud -> removed unneeded points
+								uniform density
+							constructing model from raw data
+								Intro to solid modelling
+								Automated techniques failed
+								Boundary rep
+								Created model manually with blender + PC
+						Model level of detail
+							intro to LOD
+							elements (degree of detail)
+								include conduate, wall plugs, white-board seams etc
+							lighting/shadows
+								position of lights and shadows, type of lights
+							texture
+								rough texture for carpet, smooth texture for glass panel on door
+							image draping
+								image draped over air vent
+						creating renderings of model
+							types of renderers + their differences
+							Cycles renderer used
+							Discuss render parameters
+			\fi
 			
 		\section{Comparison of the model to the photograph}
 			This section deals with the matching of the photograph to the render of the 3D model. In order to facilitate the matching process, a Python program has been created.
