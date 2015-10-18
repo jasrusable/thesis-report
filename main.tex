@@ -1,8 +1,12 @@
 \documentclass[11pt,a4paper]{report}
 
+\renewcommand{\baselinestretch}{1.5}
+
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[backend=bibtex]{biblatex}
+\usepackage{fixltx2e}
+
 \graphicspath{{./images/}}
 \addbibresource{sources.bib}
 
@@ -119,36 +123,41 @@
 		\subsubsection{Angle of arrival}
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.6\textwidth]{angle_of_arrival}
+				\includegraphics[width=0.8\textwidth]{angle_of_arrival}
 				\caption{Angle of arrival}
+				\label{fig:angle_of_arrival}
 			\end{figure}
-			Angle of arrival is the angle from which a signal is received at a receiver. Angle of arrival is typically determined by using the time difference of arrival between multiple antennas in a sensor array. Position is determined using multi-angulation.
+			The principle of angle of arrival works be determining the angle from which a signal is received at a receiver. The angle of arrival is typically determined using the time difference of arrival between multiple antennas in a sensor array. Position is determined with multi-angulation using readings from multiple transmitters.
 			Angle of arrival systems also suffer from effects such as multi-path.
+			
+			Figure \ref{fig:angle_of_arrival} illustrates the principle of angle of arrival. In the figure, B\textsubscript{1} and B\textsubscript{2} each represent a transmitter. Their signals are detected by the receiver, M.
+			
 	\subsection{Applications of radio technologies}
 		\subsubsection{Wi-Fi based systems}
-			Wi-Fi based technologies are based on measurements such as TOA (time of arrival), TDOA (time difference of arrival) and DOA (direction of arrival). However these techniques are severely impaired when line of sight is not achievable. These techniques also suffer due to objects such as walls and floors and other objects which attenuate and reflect the signals, directly affecting accuracies.
+			Wi-Fi based technologies are based on measurements such as time of arrival (TOA), time difference of arrival (TDOA) and direction of arrival (DOA). However these techniques are severely impaired when line of sight is not achievable. 
+			These techniques suffer due to objects such as walls and floors which attenuate and reflect the signal, directly affecting accuracies.
 		
-			An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. So instead of measuring the time or angle of signals, the signal strength is used to determine location. This negates many of the above mentioned deficiencies. A similar system has been employed by animal trackers with directional antennas.
+			An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. So instead of measuring the time or angle of received signals, the signal strength is measured. This negates many of the above mentioned deficiencies. A similar system has been employed by animal trackers with directional antennas.
 			\cite{yongguang_chen_signal_2002}
 	
 		\subsubsection{Blue-tooth systems}
-			Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using these techniques. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
+			Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using this technology. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
 		
-			Apple has developed a protocol called iBeacon. This protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to iBeacon.
+			Apple has developed a protocol called iBeacon. This protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to a particular iBeacon.
 			\cite{_everything_????}
 		
 		\subsubsection{Choke point concepts}
-			Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. Many choke point sensors work with passive radio-frequency identification (RFID) tags which do not report distances or signal strengths.
+			Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. Many choke point sensors work with passive radio-frequency identification (RFID) tags which merely report a tags presence, as opposed to reporting distances or signal strengths.
 			\cite{reza_investigation_2008}
 		
 		\subsubsection{Grid concepts}
-			Grid concepts employ a dense network of low-range receivers arranged in a known pattern. A tagged object will be sensed by only a few nearby, networks receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made.
+			Grid concepts employ a dense network of low-range receivers arranged in a predefined known pattern. A tagged object within the grid will be sensed by only a few nearby receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made. The tag would typically be a radio frequency identification (RFID) chip.
 		
 		\subsubsection{Others}
-			Various other systems exist but will not be discussed further. These include ultra-wide band (UWB), infra-red (IR), visible light communication, and ultrasound.
+			Various other radio based systems exist but will not be discussed further. These include ultra-wide band (UWB), infra-red (IR), visible light communication, as well as ultrasound.
 	
 	\section{Non-radio technologies}
-		Non-radio technologies which can be used for indoor positioning will be discussed below. These systems can provide increased accuracy at the expense of increased costs of equipment and additional installations.
+		Non-radio technologies which can be used for indoor positioning will be discussed in the subsections below. These systems can provide increased accuracy at the expense of increased costs of equipment as well as installation costs.
 	
 	\subsection{Magnetic positioning}
 		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations.
