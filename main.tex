@@ -388,6 +388,8 @@
 				Figure \ref{fig:more_complex_model} shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
 				
 		\subsection{Level of detail}
+			\subsection{Objects}
+				As many objects as possible have been modelled to the best possible detail. This is done in order to facilitate investigating the effects of the number of objects and the level of detail of these objects on the quality and number of matches in the comparison process. The investigation will cover multiple level of details in order to document the affect. More on this later.
 			\subsubsection{Lighting}
 				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
 				
@@ -401,6 +403,16 @@
 					In order to accurately model the natural light which penetrates though the glass panes of the door, emmisive planes were placed behind the glass panes of the door section. These emmisive planes were each calibrated in order to best represent real-world conditions of the photograph.
 					
 					{{Image of emmisive planes behind doors}}
+			\subsubsection{Texture}
+				Texture affects how an object interacts with light. Textures can be rough or smooth and can be arranged randomly or uniformly. Textures can reflect light specularly (mirror-like) or diffusely (randomly).
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{light_reflection}
+					\caption{Specular and diffuse light reflection (Source:vacuumcoating.indo)}
+					\label{fig:light_reflection}
+				\end{figure}
+				The objects in the model have all been assigned textures in order to best reflect their real-world characteristics. The texture of objects will be another subject of investigation in this report. More on this later.
+				
 			
 	\subsection{Draft}
 		3D model
