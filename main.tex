@@ -413,8 +413,44 @@
 				\end{figure}
 				The objects in the model have all been assigned textures in order to best reflect their real-world characteristics. The texture of objects will be another subject of investigation in this report. More on this later.
 				
+			\subsubsection{Image draping}
+				It is further possible to drape images of objects within the 3D model. Blender offers a feature known as UV Unwrap which enables one to wrap an image around a modelled object. The texture of the object then becomes the image.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{blender_uv_unwrap_1}
+					\caption{3D model is in the left pane, the right pane contains the image which will be wrapped onto the model (Source: ytimg.com)}
+					\label{fig:light_reflection}
+				\end{figure}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{blender_uv_unwrap_2}
+					\caption{The result of wrapping the model with the image (Source: vimeocdn.com)}
+					\label{fig:light_reflection}
+				\end{figure}
+				
+			\subsubsection{Renders}
+				Renders for this investigation where created using Blender's Cycles Renderer as it provided superior render quality when compared to the standard Blender Renderer.
+				
+				{{Image of different renderers}}
+				
+				Two quality settings where adjusted when creating renders.
+
+	\section{Comparing photograph and model}
+		In order to perform the comparison between the photograph and renders of the model, OpenCV was used extensively. The features2d module offers various feature detection algorithms (SIFT, SURF, ORB) as well as feature matching algorithms (FLANN, BruteForce). Another OpenCV module used in this investigation was the imageprocessing module which offers a number of image enhancement/manipulation functions which have been made use of in this investigation.
+		\subsection{Testing framework}
+			In order to facilitate the investigative process, a Python framework was created. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
 			
-	\subsection{Draft}
+			At the top level, the framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test or query image. 
+			
+			{{Insert image of creating a TestCase with iPython}}
+	\section{Draft}
+		Photograph
+		
+		Comparison of photo to model
+			Intro
+			My framework
+			results of investigation
+		
 		3D model
 			Model creation
 				data acquisition
