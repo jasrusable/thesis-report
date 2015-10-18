@@ -159,8 +159,10 @@
 		Non-radio technologies which can be used for indoor positioning will be discussed in the subsections below. These systems can provide increased accuracy at the expense of increased costs of equipment as well as installation costs.
 	
 	\subsection{Magnetic positioning}
-		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations.
+		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
 		\cite{supreeth_sudhakaran_geospatial_2014}
+		
+		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. 
 	
 	\subsection{Inertial measurements}
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning. Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
