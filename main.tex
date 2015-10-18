@@ -198,11 +198,12 @@
 				This data can come in the form of building plans, measured distances and directions or point clouds etc.
 				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points  within the point cloud.
 				Creating a model from building plans or other measurements involves defining model features in terms of parameters. 
-				It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the real-world environment.
+				It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the physical real-world environment.
 				
 			\subsubsection{Data preprocessing}
-				\paragraph{Laser scans}
-					During a scan, it often happens that a scanner captures points which are irrelevant. These points may include points which are considered unneeded in a particular scan. Typical examples of such cases leading to irrelevant points are people walking through a scan, reflections of the scan laser beam off of surfaces or points from objects which are deemed irrelevant. Point clouds can be cleaned manually by hand, or using automated techniques.
+				\paragraph{Cleaning laser scan point clouds}
+					During a scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous in a particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
+					In order to treat these irrelevant points within a point cloud, a point cloud can be cleaned. Cleaning can be performed manually by selectively removing irrelevant points, or automatically be defining some criterion by which points which should be removed.
 				
 					\begin{figure}[h!]
 						\centering
