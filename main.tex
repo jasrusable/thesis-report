@@ -102,15 +102,19 @@
 			A significant pitfall of time of travel systems is that they suffer greatly from effects such as multi-path.
 			\cite{k._pahlavan_wideband_1998}
 			
-			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received - transmitted).
+			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received - transmitted). Tri-lateration is then used to determine a unique location of the receiver.
 		
 		\subsubsection{Received signal strength indication}
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.6\textwidth]{rssi}
+				\includegraphics[width=0.8\textwidth]{rssi}
 				\caption{RSSI}
+				\label{fig:rssi}
 			\end{figure}
-			Received signal strength indication is a measure of the power level received by a sensor. Because of how radio waves propagate, distance can be approximated between a transmitter and receiver based on the relationship between the transmitted and received signal strength. Multi-lateration can be used to determine locality of a sensor.
+			Received signal strength indication (RSSI) is a measure of the power level received by a sensor. Distance can be approximated between a transmitter and receiver based on the relationship between the transmitted and received signal strength. Multi-lateration can be used to determine the location of a sensor.
+			A downside to this technique is that the relationship between received signal strength and distance has to be predetermined.
+			
+			Figure \ref{fig:rssi} illustrates the principle of RSSI. Received signal levels decrease radially from the transmitter.
 		
 		\subsubsection{Angle of arrival}
 			\begin{figure}[h!]
