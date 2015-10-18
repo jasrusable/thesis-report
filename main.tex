@@ -202,17 +202,46 @@
 				
 			\subsubsection{Data preprocessing}
 				\paragraph{Cleaning laser scan point clouds}
-					During a scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous in a particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
-					In order to treat these irrelevant points within a point cloud, a point cloud can be cleaned. Cleaning can be performed manually by selectively removing irrelevant points, or automatically be defining some criterion by which points which should be removed.
-				
-					\begin{figure}[h!]
-						\centering
-						\includegraphics[width=0.9\textwidth]{cleaned_pc}
-						\caption{Cleaned point cloud of focus area}
-					\end{figure}
-				
-					The density of the point cloud was also made to be consistent. Due to laser beam divergence, points nearer to the scanner are packed more densely. An operation was performed on the point cloud which ensured uniform point density throughout the cloud. This processes reduces the point cloud's size which in turn makes handling the point cloud less computationally intensive.
-					\cite{_selection_????}
+					\subparagraph{Irrelevant points}
+						During a scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous in a particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
+						
+						\begin{figure}[h!]
+							\centering
+							\includegraphics[width=1\textwidth]{uncleaned_point_cloud}
+							\caption{Raw point cloud containing irrelevant points}
+							\label{fig:uncleaned_point_cloud}
+						\end{figure}
+						
+						In order to treat these irrelevant points within a point cloud, a point cloud can be cleaned. Cleaning can be performed manually by selectively removing irrelevant points, or automatically be defining some criterion by which points which should be removed.
+					
+						\begin{figure}[h!]
+							\centering
+							\includegraphics[width=1\textwidth]{cleaned_point_cloud}
+							\caption{Cleaned point cloud containing with removed irrelevant points}
+							\label{fig:cleaned_point_cloud}
+						\end{figure}
+						
+					\subparagraph{Down sampling}
+						Due to laser beam divergence or the scanners laser, points nearer to the scanner are packed more densely.
+						
+						%TODO: Continue working from here
+						
+						An operation was performed on the point cloud which ensured uniform point density throughout the cloud. This processes reduces the point cloud's size which in turn makes handling the point cloud less computationally intensive.
+						\cite{_selection_????}
+						
+						\begin{figure}[h!]
+							\centering
+							\includegraphics[width=1\textwidth]{dense_point_cloud}
+							\caption{Radially dense point cloud}
+							\label{fig:dense_point_cloud}
+						\end{figure}
+						
+						\begin{figure}[h!]
+							\centering
+							\includegraphics[width=1\textwidth]{uniform_point_cloud}
+							\caption{Uniformly dense point cloud}
+							\label{fig:uniform_point_cloud}
+						\end{figure}
 				
 			\subsubsection{Constructing the model}
 				Solid modelling is a consistent set of principles for mathematical and computer modelling of three-dimensional solids which forms the foundation of computer-aided model design. 
