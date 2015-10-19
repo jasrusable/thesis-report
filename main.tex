@@ -412,22 +412,25 @@
 					The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
 
 \chapter{Results}
+	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
+	
 	\section{Photograph}
-		The test photograph for this investigation is of the front door section of the GTL room. The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
+		The test photograph for this investigation is of the front door section of the Geomatics Teaching Laboratory (GTL). The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
 		
 		The photograph was taken using an iPhone 4S camera, which is actually an eight megapixel Sony Exmor R IMX 145.
 		
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{gtl_door_area}
+			\includegraphics[width=1\textwidth]{gtl_door_area}
 			\caption{GTL Door area}
 		\end{figure}
 		
 	\section{3D model}
-		The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge. The model was created in an open source software package called Blender.
+		The model was created in an open source software package called Blender.
+		
 		\subsection{Creating the 3D model}
 			\subsubsection{Data acquisition}
-				In order to accurately model the scene of interest, a laser scan was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was take. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
+				In order to accurately model the scene of interest, a laser scan was conducted. The laser scanner was placed roughly in the centre of the GTL room and a single scan was taken. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
 				{{Insert Point Cloud image}}.
 				
@@ -442,14 +445,14 @@
 				
 				{{Image of cleaned PC}}
  
-				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was eroded to a resolution of 7mm. This removed many superfluous points and considerably reduced the file size of the point cloud.
+				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
 			
 			\subsubsection{Model construction}
 				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme. It is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
 				\cite{hongxin_zhang_introduction_2007}
-				Boundary representation was selected as the solid representation scheme as it is very suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfect which ironically leads to a model which is more accurate, in that the model more accurately represents the real-world features or objects.
+				Boundary representation was selected as the solid representation scheme as it is very suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfect which leads to a model which is more accurate, in that the model more accurately represents the real-world features.
 				
-				The accuracy of the model is an important consideration for this investigation. The model was to be constructed as accurately as possible in order to maximise the chances of obtaining good quality matches, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
+				The accuracy of the model is an important consideration for this investigation. The model was constructed as accurately as possible in order to maximise the chances of obtaining good quality matches, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
 				
 				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
