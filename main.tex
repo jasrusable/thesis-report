@@ -3,9 +3,9 @@
 \renewcommand{\baselinestretch}{1.5}
 
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage[backend=bibtex]{biblatex}
-\usepackage{fixltx2e}
 
 \graphicspath{{./images/}}
 \addbibresource{sources.bib}
@@ -93,7 +93,7 @@
 	
 	\subsection{Principles of radio technologies}
 		\subsubsection{Time of arrival}
-			\begin{figure}[h!]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.8\textwidth]{time_of_arrival}
 				\caption{Time of arrival}
@@ -108,7 +108,7 @@
 			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received - transmitted). Tri-lateration is then used to determine a unique location of the receiver.
 		
 		\subsubsection{Received signal strength indication}
-			\begin{figure}[h!]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.8\textwidth]{rssi}
 				\caption{RSSI}
@@ -120,7 +120,7 @@
 			Figure \ref{fig:rssi} illustrates the principle of RSSI. Received signal levels decrease radially from the transmitter.
 		
 		\subsubsection{Angle of arrival}
-			\begin{figure}[h!]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.8\textwidth]{angle_of_arrival}
 				\caption{Angle of arrival}
@@ -129,7 +129,7 @@
 			The principle of angle of arrival works be determining the angle from which a signal is received at a receiver. The angle of arrival is typically determined using the time difference of arrival between multiple antennas in a sensor array. Position is determined with multi-angulation using readings from multiple transmitters.
 			Angle of arrival systems also suffer from effects such as multi-path.
 			
-			Figure \ref{fig:angle_of_arrival} illustrates the principle of angle of arrival. In the figure, B\textsubscript{1} and B\textsubscript{2} each represent a transmitter. Their signals are detected by the receiver, M.
+			Figure \ref{fig:angle_of_arrival} illustrates the principle of angle of arrival. In the figure, $B_1$ and $B_2$ each represent a transmitter. Their signals are detected by the receiver, M.
 			
 	\subsection{Applications of radio technologies}
 		\subsubsection{Wi-Fi based systems}
@@ -205,7 +205,7 @@
 					\subparagraph{Irrelevant points}
 						During a scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous in a particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
 						
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{uncleaned_point_cloud}
 							\caption{Raw point cloud containing irrelevant points}
@@ -214,7 +214,7 @@
 						
 						In order to treat these irrelevant points within a point cloud, a point cloud can be cleaned. Cleaning can be performed manually by selectively removing irrelevant points, or automatically be defining some criterion by which points which should be removed.
 					
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{cleaned_point_cloud}
 							\caption{Cleaned point cloud containing with removed irrelevant points}
@@ -224,7 +224,7 @@
 					\subparagraph{Down sampling}
 						Due to laser beam divergence or the scanners laser, points nearer to the scanner are packed more densely than those farther away. The density decreases radially from the scanners location.
 						
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{dense_point_cloud}
 							\caption{Raw point cloud has a high point density near the location of the scanner}
@@ -234,7 +234,7 @@
 						It is often unnecessary to have the points packed at such a high density as the high density adds very little information to the overall point cloud. A process known as down sampling can be performed on a point cloud in order to make the point density more uniform. Down sampling works by iteratively removing points which fall within a specified distance of other points in a point cloud. The end result is that the point cloud's file size, and the computational effort required to visualize and manipulate the point cloud is greatly reduced.
 						\cite{_selection_????}
 						
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{uniform_point_cloud}
 							\caption{Down sampling yields a uniformly dense point cloud}
@@ -259,9 +259,9 @@
 		\subsection{Level of detail of the model}
 			In terms of 3D modelling, level of detail refers to how thoroughly real-world objects have been modelled and how closely those modelled objects resemble their real-world counterparts.
 			
-			\begin{figure}[h!]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.6\textwidth]{level_of_detail_example}
+				\includegraphics[width=1\textwidth]{level_of_detail_example}
 				\caption{Level of detail example}
 			\end{figure}
 			
@@ -280,7 +280,7 @@
 					The GTL room is illuminated by florescent light panels, each containing three fluorescent tubes. The panels are rectangular with dimensions 0.5m by 1.5m. Additionally, light enters the room from the windows along the north wall, as well as through the glass panels within the door. So there are three sources of light illuminating the room. When modelling light sources, there are a few considerations which need to be made, they are detailed in the paragraphs which follow.
 					\subparagraph{Colour temperature}
 						The colour temperature of a light source is the temperature of an ideal black-body radiator that radiates light of comparable hue to that of the light source. Colour temperatures are typically statued in the unit of absolute temperature, the Kelvin, with the symbol K.
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							%TODO: Needs a source
 							\centering
 							\includegraphics[width=1\textwidth]{colour_temperature}
@@ -292,12 +292,12 @@
 						%TODO: Needs work
 						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed as well as calibrated. The overhead lights have been placed in their respective real-world potions. Three emmisive planes have been placed behind the glass panels of the door area in order to replicate the real-world lighting.
 						
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=0.6\textwidth]{overhead_lights}
 							\caption{Overhead florescent lights}
 						\end{figure}
-						\begin{figure}[h!]
+						\begin{figure}[H]
 							\centering
 							\includegraphics[width=0.6\textwidth]{lights_behind_door}
 							\caption{Emmisive planes behind door replicate sunlight}
@@ -366,9 +366,9 @@
 				
 				The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
 			
-			\paragraph{Meh}
+			\paragraph{Feature matching}
 				%TODO: Needs work
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_homography_example}
 					\caption{Feature homography}
@@ -382,7 +382,7 @@
 					
 					To provide an example of what key points are, consider the image below:
 					
-					\begin{figure}[h!]
+					\begin{figure}[H]
 						%TODO: Needs a source
 						\centering
 						\includegraphics[width=0.9\textwidth]{feature_building}
@@ -397,7 +397,7 @@
 				\subsubsection{Finding key points}
 					The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when moved in all directions.
 					
-					\begin{figure}[h!]
+					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{feature_detection}
 						\caption{Feature detection}
@@ -419,7 +419,7 @@
 		
 		The photograph was taken using an iPhone 4S camera, which is actually an eight megapixel Sony Exmor R IMX 145.
 		
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1\textwidth]{gtl_door_area}
 			\caption{GTL Door area}
@@ -456,7 +456,7 @@
 				
 				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{simple_model_with_pc}
 					\caption{Walls, floor and air-conditioning duct modelled from the point cloud}
@@ -467,7 +467,7 @@
 				
 				Detail of the model was iteratively increased by modelling finer and finer details.
 				
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{model_with_increased_detail}
 					\caption{Model with increased detail}
@@ -494,7 +494,7 @@
 					{{Image of emmisive planes behind doors}}
 			\subsubsection{Texture}
 				Texture affects how an object interacts with light. Textures can be rough or smooth and can be arranged randomly or uniformly. Textures can reflect light specularly (mirror-like) or diffusely (randomly).
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{light_reflection}
 					\caption{Specular and diffuse light reflection (Source:vacuumcoating.indo)}
@@ -504,17 +504,17 @@
 				
 			\subsubsection{Image draping}
 				It is further possible to drape images of objects within the 3D model. Blender offers a feature known as UV Unwrap which enables one to wrap an image around a modelled object. The texture of the object then becomes the image.
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{blender_uv_unwrap_1}
 					\caption{3D model is in the left pane, the right pane contains the image which will be wrapped onto the model (Source: ytimg.com)}
-					\label{fig:light_reflection}
+					\label{fig:blender_uv_unwrap_1}
 				\end{figure}
-				\begin{figure}[h!]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{blender_uv_unwrap_2}
 					\caption{The result of wrapping the model with the image (Source: vimeocdn.com)}
-					\label{fig:light_reflection}
+					\label{fig:blender_uv_unwrap_2}
 				\end{figure}
 				
 			\subsubsection{Renders}
