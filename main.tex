@@ -366,17 +366,17 @@
 				
 				The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
 			
-			\paragraph{Feature matching}
-				%TODO: Needs work
-				\begin{figure}[H]
-					\centering
-					\includegraphics[width=0.9\textwidth]{feature_homography_example}
-					\caption{Feature homography}
-				\end{figure}
-				
-				The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
-			
 			\subsection{Performing the comparison}
+				\subsubsection{Feature matching}
+					%TODO: Needs work
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{feature_homography_example}
+						\caption{Feature homography}
+					\end{figure}
+					
+					The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
+				
 				\subsubsection{Key points}
 					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
 					
@@ -410,6 +410,28 @@
 					
 				\subsubsection{Matching key points}
 					The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+
+		\section{Test parameters}
+			There are various actions which can be performed on the model, render and photograph which may influence the accuracy of matches, as well as the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation.
+			\subsection{Image enhancements}
+				A number of image enhancement processes can be performed on the photograph as well as on the rendered image. These processes will be discussed in subsections to follow.
+				\subsubsection{Blurring}
+					Gaussian blurring (or smoothing) is an image processing function which yields an image blurred by a Gaussian function. It is typically used to reduce noise and detail within an image. Gaussian blur acts as a low pass filter, attenuating high frequency signals.
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.6\textwidth]{gaussian_blur}
+						\caption{Gaussian blur example (Source: wikipedia.org)}
+						\label{fig:gaussian_blur}
+					\end{figure}
+				
+				\subsubsection{Edge detection}
+					Edge detection is a method of identifying points which are discontinues, or where the brightness changes sharply.
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{edge_detection}
+						\caption{Edge detection example (Source: wikipedia.org)}
+						\label{fig:edge_detection}
+					\end{figure}
 
 \chapter{Results}
 	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
