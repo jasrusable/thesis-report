@@ -222,34 +222,36 @@
 						\end{figure}
 						
 					\subparagraph{Down sampling}
-						Due to laser beam divergence or the scanners laser, points nearer to the scanner are packed more densely.
-						
-						%TODO: Continue working from here
-						
-						An operation was performed on the point cloud which ensured uniform point density throughout the cloud. This processes reduces the point cloud's size which in turn makes handling the point cloud less computationally intensive.
-						\cite{_selection_????}
+						Due to laser beam divergence or the scanners laser, points nearer to the scanner are packed more densely than those farther away. The density decreases radially from the scanners location.
 						
 						\begin{figure}[h!]
 							\centering
 							\includegraphics[width=1\textwidth]{dense_point_cloud}
-							\caption{Radially dense point cloud}
+							\caption{Raw point cloud has a high point density near the location of the scanner}
 							\label{fig:dense_point_cloud}
 						\end{figure}
+						
+						It is often unnecessary to have the points packed at such a high density as the high density adds very little information to the overall point cloud. A process known as down sampling can be performed on a point cloud in order to make the point density more uniform. Down sampling works by iteratively removing points which fall within a specified distance of other points in a point cloud. The end result is that the point cloud's file size, and the computational effort required to visualize and manipulate the point cloud is greatly reduced.
+						\cite{_selection_????}
 						
 						\begin{figure}[h!]
 							\centering
 							\includegraphics[width=1\textwidth]{uniform_point_cloud}
-							\caption{Uniformly dense point cloud}
+							\caption{Down sampling yields a uniformly dense point cloud}
 							\label{fig:uniform_point_cloud}
 						\end{figure}
+						
+						Figure \ref{fig:dense_point_cloud} shows a point cloud with a high density near the scanners location. Most of the points near the scanner in the high density area are superfluous.
+						
+						Figure \ref{fig:uniform_point_cloud} shows a point cloud after a down sampling operation.
 				
 			\subsubsection{Constructing the model}
 				Solid modelling is a consistent set of principles for mathematical and computer modelling of three-dimensional solids which forms the foundation of computer-aided model design. 
 				\cite{vadim_shapiro_solid_2001}
-				Models are created by using various solid representation schemes. The common aim of these schemes is to organise geometric and topological data in the form of a data structure. 
+				Models are created using various solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of a consistent data structure. A model may be created using any number of combinations of solid representation schemes.
 				
 				\paragraph{Pertaining solid representation schemes}
-					Boundary representation (B-rep) is a solid representation scheme. It is a method for representing shapes using limits. In boundary representation a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
+					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices.
 					\cite{hongxin_zhang_introduction_2007}
 				
 		\subsection{Level of detail of the model}
