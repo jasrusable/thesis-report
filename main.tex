@@ -248,14 +248,16 @@
 			\subsubsection{Constructing the model}
 				Solid modelling is a consistent set of principles for mathematical and computer modelling of three-dimensional solids which forms the foundation of computer-aided model design. 
 				\cite{vadim_shapiro_solid_2001}
-				Models are created using various solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of a consistent data structure. A model may be created using any number of combinations of solid representation schemes.
+				3D models can be created using various solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of consistent data structures. A model may be created using any number of combinations of solid representation schemes.
+				
+				%TODO: Add CSG explination
 				
 				\paragraph{Pertaining solid representation schemes}
 					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices.
 					\cite{hongxin_zhang_introduction_2007}
 				
 		\subsection{Level of detail of the model}
-			In terms of 3D modelling, level of detail refers to how thoroughly real-world features have been modelled and how much those model features resemble their real-world counterparts.
+			In terms of 3D modelling, level of detail refers to how thoroughly real-world objects have been modelled and how closely those modelled objects resemble their real-world counterparts.
 			
 			\begin{figure}[h!]
 				\centering
@@ -263,29 +265,32 @@
 				\caption{Level of detail example}
 			\end{figure}
 			
+			%TODO: Needs work
+			
 			The figure above illustrates the concept of level of detail. A sphere has been modelled at various levels of detail, decreasing from left to right.
 			
 			\subsubsection{Features}
-				As many features as possible have been modelled within the area of investigation. This has been done in order to maximise the chance of a high quality match to the photograph as well as to facilitate testing and experimenting with the effect of various levels of detail on the accuracy of a matches. 
-				
-				This includes the modelling of the wall skirting, the electrical wire conduate, as well as fine details around the whiteboard. 
+				%TODO: Needs work
 				
 			\subsubsection{Lighting}
-				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a model as well as its accuracy. When creating the model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail below.
+				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a model as well as its overall accuracy. When creating the model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail below.
 				
 				\paragraph{Light source}
+					%TODO: Needs work
 					The GTL room is illuminated by florescent light panels, each containing three fluorescent tubes. The panels are rectangular with dimensions 0.5m by 1.5m. Additionally, light enters the room from the windows along the north wall, as well as through the glass panels within the door. So there are three sources of light illuminating the room. When modelling light sources, there are a few considerations which need to be made, they are detailed in the paragraphs which follow.
 					\subparagraph{Colour temperature}
 						The colour temperature of a light source is the temperature of an ideal black-body radiator that radiates light of comparable hue to that of the light source. Colour temperatures are typically statued in the unit of absolute temperature, the Kelvin, with the symbol K.
 						\begin{figure}[h!]
+							%TODO: Needs a source
 							\centering
-							\includegraphics[width=0.6\textwidth]{colour_temperature}
+							\includegraphics[width=1\textwidth]{colour_temperature}
 							\caption{Colour temperatures}
 						\end{figure}
-						The figure above shows how colour temperatures relate to real world scenarios.
+						The figure above shows how colour temperatures relate to real world conditions.
 				
 					\subparagraph{Position of lights}
-						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed and calibrated. The overhead lights have been placed in their respective real-world potions. Three emmisive planes have been placed behind the glass panels of the door area in order to replicate the real-world lighting.
+						%TODO: Needs work
+						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed as well as calibrated. The overhead lights have been placed in their respective real-world potions. Three emmisive planes have been placed behind the glass panels of the door area in order to replicate the real-world lighting.
 						
 						\begin{figure}[h!]
 							\centering
@@ -299,11 +304,10 @@
 						\end{figure}
 					
 					\subparagraph{Light intensity}
-						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real world lighting intensities in the model, each light source was adjusted individually and judged by simple visual inspection. 
-						
-						One important consideration here is that because the Earth rotates about its axis as well as around the sun, perceived sun light varies. For the sake of this investigation, the lighting conditions were assumed to be that of midday, which was when the photographs for comparison were taken. {{Need more here, clouds affect light etc}}
+						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real world lighting intensities in a model, each light source needs to be adjusted individually and judged by visual inspection. 
 						
 				\subsubsection{Texture}
+					%TODO: Needs work
 					Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
 					\cite{e._paul_degarmo_materials_2003}
 					Particular attention has been paid to accurately representing surface characteristics of as many features as possible in the model.
@@ -314,6 +318,7 @@
 					The gray pin board has a rough texture.
 			
 			\subsection{Renderings of the model}
+				%TODO: Needs work
 				Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered. Examples of real-time renderings include 3D video games.
 				
 				Blender offers three types of renderer engines, Blender, Cycles, and Game renderers. For this investigation, the Cycles renderer was used as it offered superior results.
@@ -353,35 +358,40 @@
 			\fi
 			
 		\section{Comparison of the model to the photograph}
-			This section deals with the matching of the photograph to the render of the 3D model. In order to facilitate the matching process, a Python program has been created.
+			%TODO: Needs work
+			This section deals with the matching of the photograph to the render of the 3D model.
 			
-			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
+			\paragraph{OpenCV}
+				OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
+				
+				The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
 			
-			The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
-			
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.9\textwidth]{feature_homography_example}
-				\caption{Feature homography}
-			\end{figure}
-			
-			The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
+			\paragraph{Meh}
+				%TODO: Needs work
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.9\textwidth]{feature_homography_example}
+					\caption{Feature homography}
+				\end{figure}
+				
+				The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
 			
 			\subsection{Performing the comparison}
 				\subsubsection{Key points}
-					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked and which can be easily compared.
+					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
 					
 					To provide an example of what key points are, consider the image below:
 					
 					\begin{figure}[h!]
+						%TODO: Needs a source
 						\centering
 						\includegraphics[width=0.9\textwidth]{feature_building}
 						\caption{Feature building}
 					\end{figure}
 					
-					The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point. We now want to be able to find the exact location of these blocks in the original image. 
-					Blocks A and B are flat surfaces, the are spread over a large area and so it is difficult to find the exact location of these blocks.
-					Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge, but it is still impossible to pinpoint where they are from.
+					The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point. We now want to be able to find the exact location of these blocks within the original image. 
+					Blocks A and B depict flat surfaces, they are spread over a large area and so it is difficult to find the exact location of these blocks, that is that there are a number of location where these blocks could fit.
+					Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge, but it is still impossible to pinpoint exactly where they are from.
 					Blocks E and F are the corners of the building. The locations of these blocks can be exactly found and so these would be good key points as they are unique.
 				
 				\subsubsection{Finding key points}
@@ -393,12 +403,13 @@
 						\caption{Feature detection}
 					\end{figure}
 					
-					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point.
+					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. So corners are typically good features.
+					
 				\subsubsection{Describing key points}
 					Once key points have been identified, they need to be described. The purpose of describing the key points is to enable the comparison of key points across images. The idea is that a real-world point will have a similar key point description within the images which capture the real-world point.
 					
 				\subsubsection{Matching key points}
-					The final step of the comparison process is that of matching key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+					The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
 
 \chapter{Results}
 	\section{Photograph}
