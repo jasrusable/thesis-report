@@ -310,61 +310,21 @@
 					%TODO: Needs work
 					Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
 					\cite{e._paul_degarmo_materials_2003}
-					Particular attention has been paid to accurately representing surface characteristics of as many features as possible in the model.
-					The panels in the door are set to be smooth and transparent, replicating the real-world glass panes. 
-					The texture of the walls has been adjusted.
-					The texture of the floor has been roughened to replicate the carpet.
-					The whiteboards are smooth and glossy.
-					The gray pin board has a rough texture.
+					
 			
 			\subsection{Renderings of the model}
 				%TODO: Needs work
-				Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered. Examples of real-time renderings include 3D video games.
+				Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered.
 				
-				Blender offers three types of renderer engines, Blender, Cycles, and Game renderers. For this investigation, the Cycles renderer was used as it offered superior results.
+				Blender offers three types of render engines, Blender, Cycles, and Game renderers. 
 				
-				{{Insert rendered images here}} 
-				
-				Discus 
-			
-			\iffalse
-				\subsubsection{Draft}
-					3D model
-						Model creation
-							data acquisition
-								data from laser scan -> Point cloud
-							data preprocessing
-								cleaned point cloud -> removed unneeded points
-								uniform density
-							constructing model from raw data
-								Intro to solid modelling
-								Automated techniques failed
-								Boundary rep
-								Created model manually with blender + PC
-						Model level of detail
-							intro to LOD
-							elements (degree of detail)
-								include conduate, wall plugs, white-board seams etc
-							lighting/shadows
-								position of lights and shadows, type of lights
-							texture
-								rough texture for carpet, smooth texture for glass panel on door
-							image draping
-								image draped over air vent
-						creating renderings of model
-							types of renderers + their differences
-							Cycles renderer used
-							Discuss render parameters
-			\fi
+				{{Insert rendered images here}}  
 			
 		\section{Comparison of the model to the photograph}
 			%TODO: Needs work
 			This section deals with the matching of the photograph to the render of the 3D model.
 			
-			\paragraph{OpenCV}
-				OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
-				
-				The principle here is that there exist algorithms in OpenCV which, provided with a test image and query image, are able to compare the test image within the query image, yielding transformation parameters which relate the test image to the query image.
+			The principle here is that there exist algorithms which, provided with a test image and query image, are able to detect the test image within the query image, yielding transformation parameters which relate the test image to the query image.
 			
 			\subsection{Performing the comparison}
 				\subsubsection{Feature matching}
@@ -375,7 +335,7 @@
 						\caption{Feature homography}
 					\end{figure}
 					
-					The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image inside it. Here, the test image has been detected within the query image, and the algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
+					The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image, and an algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
 				
 				\subsubsection{Key points}
 					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
@@ -410,6 +370,10 @@
 					
 				\subsubsection{Matching key points}
 					The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+		
+		\section{Tools}
+			\subsection{OpenCV}
+				OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
 
 		\section{Test parameters}
 			There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of matches, as well as the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
@@ -508,7 +472,7 @@
 				Figure \ref{fig:more_complex_model} shows the model with increased detail. The skirting board, conduate, door as well as white-boards have now been added. All these features have been modelled from the point cloud and so the model is an accurate representation of the actual room in terms of scale etc.
 				
 		\subsection{Level of detail of the 3D model}
-			\subsection{Objects}
+			\subsubsection{Objects}
 				As many objects as possible have been modelled to the best possible detail. This is done in order to facilitate investigating the effects of the number of objects and the level of detail of these objects on the quality and number of matches in the comparison process. The investigation will cover multiple level of details in order to document the affect. More on this later.
 			\subsubsection{Lighting}
 				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
@@ -533,6 +497,14 @@
 				\end{figure}
 				The objects in the model have all been assigned textures in order to best reflect their real-world characteristics. The texture of objects will be another subject of investigation in this report. More on this later.
 				
+				%TODO: Needs work
+				Particular attention has been paid to accurately representing surface characteristics of as many features as possible in the model.
+				The panels in the door are set to be smooth and transparent, replicating the real-world glass panes. 
+				The texture of the walls has been adjusted.
+				The texture of the floor has been roughened to replicate the carpet.
+				The whiteboards are smooth and glossy.
+				The gray pin board has a rough texture.
+				
 			\subsubsection{Image draping}
 				It is further possible to drape images of objects within the 3D model. Blender offers a feature known as UV Unwrap which enables one to wrap an image around a modelled object. The texture of the object then becomes the image.
 				\begin{figure}[H]
@@ -548,15 +520,17 @@
 					\label{fig:blender_uv_unwrap_2}
 				\end{figure}
 				
-			\subsubsection{Renders}
-				Renders for this investigation where created using Blender's Cycles Renderer as it provided superior render quality when compared to the standard Blender Renderer.
-				
-				{{Image of different renderers}}
-				
-				Two quality settings where adjusted when creating renders.
+		\subsection{Renders}
+			Renders for this investigation where created using Blender's Cycles Renderer as it provided superior render quality when compared to the standard Blender Renderer.
+			
+			{{Image of different renderers}}
+			
+			For this investigation, the Cycles renderer was used as it offered superior results.
+			
+			Two quality settings where adjusted when creating renders.
 
 	\section{Comparing the photograph to the model}
-		In order to perform the comparison between the photograph and renders of the model, OpenCV was used extensively. The features2d module offers various feature detection algorithms (SIFT, SURF, ORB) as well as feature matching algorithms (FLANN, BruteForce). Another OpenCV module used in this investigation was the imageprocessing module which offers a number of image enhancement/manipulation functions which have been made use of in this investigation.
+		In order to perform the comparison between the photograph and renders of the model, OpenCV was used extensively. The features2d module offers various feature detection algorithms (SIFT, SURF, ORB) as well as feature matching algorithms (FLANN, BruteForce). Another OpenCV module used in this investigation was the image processing module which offers a number of image enhancement/manipulation functions which have been made use of in this investigation.
 		\subsection{Testing framework}
 			In order to facilitate the investigative process, a Python framework was created. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
 			
