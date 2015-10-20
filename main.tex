@@ -306,105 +306,107 @@
 					\subparagraph{Light intensity}
 						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real world lighting intensities in a model, each light source needs to be adjusted individually and judged by visual inspection. 
 						
-				\subsubsection{Texture}
-					%TODO: Needs work
-					Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
-					\cite{e._paul_degarmo_materials_2003}
-					
-			
-			\subsection{Renderings of the model}
+			\subsubsection{Texture}
 				%TODO: Needs work
-				Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered.
-				
-				Blender offers three types of render engines, Blender, Cycles, and Game renderers. 
-				
-				{{Insert rendered images here}}  
+				Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
+				\cite{e._paul_degarmo_materials_2003}
+					
 			
-		\section{Comparison of the model to the photograph}
+		\subsection{Renderings of the model}
 			%TODO: Needs work
-			This section deals with the matching of the photograph to the render of the 3D model.
+			Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered.
 			
-			The principle here is that there exist algorithms which, provided with a test image and query image, are able to detect the test image within the query image, yielding transformation parameters which relate the test image to the query image.
+			Blender offers three types of render engines, Blender, Cycles, and Game renderers.
 			
-			\subsection{Performing the comparison}
-				\subsubsection{Feature matching}
-					%TODO: Needs work
-					\begin{figure}[H]
-						\centering
-						\includegraphics[width=0.9\textwidth]{feature_homography_example}
-						\caption{Feature homography}
-					\end{figure}
-					
-					The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image, and an algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
-				
-				\subsubsection{Key points}
-					The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
-					
-					To provide an example of what key points are, consider the image below:
-					
-					\begin{figure}[H]
-						%TODO: Needs a source
-						\centering
-						\includegraphics[width=0.9\textwidth]{feature_building}
-						\caption{Feature building}
-					\end{figure}
-					
-					The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point. We now want to be able to find the exact location of these blocks within the original image. 
-					Blocks A and B depict flat surfaces, they are spread over a large area and so it is difficult to find the exact location of these blocks, that is that there are a number of location where these blocks could fit.
-					Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge, but it is still impossible to pinpoint exactly where they are from.
-					Blocks E and F are the corners of the building. The locations of these blocks can be exactly found and so these would be good key points as they are unique.
-				
-				\subsubsection{Finding key points}
-					The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when moved in all directions.
-					
-					\begin{figure}[H]
-						\centering
-						\includegraphics[width=0.9\textwidth]{feature_detection}
-						\caption{Feature detection}
-					\end{figure}
-					
-					In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. So corners are typically good features.
-					
-				\subsubsection{Describing key points}
-					Once key points have been identified, they need to be described. The purpose of describing the key points is to enable the comparison of key points across images. The idea is that a real-world point will have a similar key point description within the images which capture the real-world point.
-					
-				\subsubsection{Matching key points}
-					The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+			Renders of the model will be created under various different render settings, as well as under the different model conditions (described above). The effect of altering the render settings will be a subject of investigation.
+			
+			{{Insert rendered images here}}  
+			
+	\section{Comparison of the model to the photograph}
+		%TODO: Needs work
+		This section deals with the matching of the photograph to the render of the 3D model.
 		
-		\section{Tools}
-			\subsection{OpenCV}
-				OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
-
-		\section{Test parameters}
-			There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of matches, as well as the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
+		The principle here is that there exist algorithms which, provided with a test image and query image, are able to detect the test image within the query image, yielding transformation parameters which relate the test image to the query image.
+		
+		\subsection{Performing the comparison}
+			\subsubsection{Feature matching}
+				%TODO: Needs work
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.9\textwidth]{feature_homography_example}
+					\caption{Feature homography}
+				\end{figure}
+				
+				The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image, and an algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
 			
-			\subsection{Model adjustments}
-				\subsubsection{Level of detail}
-					The level of detail of the model can be adjusted.
-					
-				\subsubsection{Image draping}
-					Image draping can be performed.
-					
+			\subsubsection{Key points}
+				The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
 				
-			\subsection{Image enhancements}
-				A number of image enhancement processes can be performed on the photograph as well as on the rendered image. These processes will be discussed in subsections to follow.
-				\subsubsection{Blurring}
-					Gaussian blurring (or smoothing) is an image processing function which yields an image blurred by a Gaussian function. It is typically used to reduce noise and detail within an image. Gaussian blur acts as a low pass filter, attenuating high frequency signals.
-					\begin{figure}[H]
-						\centering
-						\includegraphics[width=0.6\textwidth]{gaussian_blur}
-						\caption{Gaussian blur example (Source: wikipedia.org)}
-						\label{fig:gaussian_blur}
-					\end{figure}
+				To provide an example of what key points are, consider the image below:
 				
-				\subsubsection{Edge detection}
-					Edge detection is a method of identifying points which are discontinues, or where the brightness changes sharply.
-					\begin{figure}[H]
-						\centering
-						\includegraphics[width=0.9\textwidth]{edge_detection}
-						\caption{Edge detection example (Source: wikipedia.org)}
-						\label{fig:edge_detection}
-					\end{figure}
+				\begin{figure}[H]
+					%TODO: Needs a source
+					\centering
+					\includegraphics[width=0.9\textwidth]{feature_building}
+					\caption{Feature building}
+				\end{figure}
+				
+				The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point. We now want to be able to find the exact location of these blocks within the original image. 
+				Blocks A and B depict flat surfaces, they are spread over a large area and so it is difficult to find the exact location of these blocks, that is that there are a number of location where these blocks could fit.
+				Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge, but it is still impossible to pinpoint exactly where they are from.
+				Blocks E and F are the corners of the building. The locations of these blocks can be exactly found and so these would be good key points as they are unique.
+			
+			\subsubsection{Finding key points}
+				The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when moved in all directions.
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.9\textwidth]{feature_detection}
+					\caption{Feature detection}
+				\end{figure}
+				
+				In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally, there is no variation, this represents a poor feature/key point. When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is. When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. So corners are typically good features.
+				
+			\subsubsection{Describing key points}
+				Once key points have been identified, they need to be described. The purpose of describing the key points is to enable the comparison of key points across images. The idea is that a real-world point will have a similar key point description within the images which capture the real-world point.
+				
+			\subsubsection{Matching key points}
+				The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+	
+	\section{Tools}
+		\subsection{OpenCV}
+			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
+
+	\section{Test parameters}
+		There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of matches, as well as the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
+		
+		\subsection{Model adjustments}
+			\subsubsection{Level of detail}
+				The level of detail of the model can be adjusted.
+				
+			\subsubsection{Image draping}
+				Image draping can be performed.
+			
+		\subsection{Image enhancements}
+			A number of image enhancement processes can be performed on the photograph as well as on the rendered image. These processes will be discussed in subsections to follow.
+			\subsubsection{Blurring}
+				Gaussian blurring (or smoothing) is an image processing function which yields an image blurred by a Gaussian function. It is typically used to reduce noise and detail within an image. Gaussian blur acts as a low pass filter, attenuating high frequency signals.
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.6\textwidth]{gaussian_blur}
+					\caption{Gaussian blur example (Source: wikipedia.org)}
+					\label{fig:gaussian_blur}
+				\end{figure}
+			
+			\subsubsection{Edge detection}
+				Edge detection is a method of identifying points which are discontinues, or where the brightness changes sharply.
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.9\textwidth]{edge_detection}
+					\caption{Edge detection example (Source: wikipedia.org)}
+					\label{fig:edge_detection}
+				\end{figure}
+
 
 \chapter{Results}
 	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
