@@ -378,14 +378,14 @@
 			Now that concepts of feature detection and feature matching have been introduced, the application of the image matching process to the aims of this paper can be discussed.
 			In the context of this proposed new indoor positioning technique, the test image would be a photograph that a user has supplied who wishes to know their location within an environment. The query image would be one of many renders of the 3D model of that same environment.
 			The idea is that the test image could be compared to a number of renders from different locations within the environment. Once a quality match is made, the location of the photographer can be determined using photogrammetric techniques, or by georeferencing the renders, however this is outside of the scope of this paper, but will be further discussed in the future work chapter below.
-			%TODO: Refference to Future Work chapter
+			%TODO: Reference to Future Work chapter
 	
 	\section{Tools}
 		\subsection{OpenCV}
 			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features framework (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
 
 	\section{Test parameters}
-		There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of matches, as well as the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
+		There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of, and the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
 		
 		\subsection{Model adjustments}
 			\subsubsection{Level of detail}
@@ -393,6 +393,12 @@
 				
 			\subsubsection{Image draping}
 				Image draping can be performed.
+			
+			\subsubsection{Lighting}
+				Lighting in the model can be adjusted.
+		
+		\subsection{Renders}
+			Render settings can be adjusted.
 			
 		\subsection{Image enhancements}
 			A number of image enhancement processes can be performed on the photograph as well as on the rendered image. These processes will be discussed in subsections to follow.
