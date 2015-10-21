@@ -247,11 +247,14 @@
 				\cite{vadim_shapiro_solid_2001}
 				3D models can be created using various solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of consistent data structures. A model may be created using any number of combinations of solid representation schemes.
 				
-				%TODO: Add CSG explination
-				
-				\paragraph{Pertaining solid representation schemes}
+				\paragraph{Boundary representation (B-rep)}
 					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices.
 					\cite{hongxin_zhang_introduction_2007}
+				
+				%TODO: Improve CSG explination
+				\paragraph{Constructive solid geometry (CSG)}
+					Constructive solid geometry is a solid modelling technique which works by creating complex objects using boolean operators. Primitive objects are the simplest type of objects and are used to create more complex objects by performing operations such as unions, intersections and differences.
+					\cite{foley_computer_1996}
 				
 		\subsection{Level of detail of the model}
 			In terms of 3D modelling, level of detail refers to how thoroughly real-world objects have been modelled and how closely those modelled objects resemble their real-world counterparts.
@@ -286,7 +289,7 @@
 						The figure above shows how colour temperatures relate to real world conditions.
 				
 					\subparagraph{Position of lights}
-						%TODO: Needs work
+						%TODO: Needs work, use better images
 						In order to accurately replicate shadows and intensities, the lighting in the model needs to be strategically placed as well as calibrated. The overhead lights have been placed in their respective real-world potions. Three emmisive planes have been placed behind the glass panels of the door area in order to replicate the real-world lighting.
 						
 						\begin{figure}[H]
@@ -330,9 +333,10 @@
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_homography_example}
 					\caption{Feature homography}
+					\label{fig:feature_homogrophy}
 				\end{figure}
 				
-				The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image, and an algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
+				The figure above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image, an algorithm has drawn a green box around where it thinks the test image lies within the query image. This box is defined by a transformation. The process of performing the comparison will be discussed in detail in the sections to follow.
 			
 			\subsubsection{Key points}
 				The first step involved in performing a comparison requires determining what are known as key points within an image. Key points represent specific patterns or features which are unique, can be easily tracked, described and compared.
@@ -344,6 +348,7 @@
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_building}
 					\caption{Feature building}
+					\label{fig:feature_building}
 				\end{figure}
 				
 				The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point. We now want to be able to find the exact location of these blocks within the original image. 
@@ -355,6 +360,7 @@
 				The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when moved in all directions.
 				
 				\begin{figure}[H]
+					%TODO: Needs a source
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_detection}
 					\caption{Feature detection}
@@ -367,6 +373,12 @@
 				
 			\subsubsection{Matching key points}
 				The final step of the comparison process is that of matching/comparing key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of two key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
+		
+		\subsection{Comparing}
+			Now that concepts of feature detection and feature matching have been introduced, the application of the image matching process to the aims of this paper can be discussed.
+			In the context of this proposed new indoor positioning technique, the test image would be a photograph that a user has supplied who wishes to know their location within an environment. The query image would be one of many renders of the 3D model of that same environment.
+			The idea is that the test image could be compared to a number of renders from different locations within the environment. Once a quality match is made, the location of the photographer can be determined using photogrammetric techniques, or by georeferencing the renders, however this is outside of the scope of this paper, but will be further discussed in the future work chapter below.
+			%TODO: Refference to Future Work chapter
 	
 	\section{Tools}
 		\subsection{OpenCV}
