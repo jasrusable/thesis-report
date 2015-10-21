@@ -456,15 +456,21 @@
 				{{Image of cleaned PC}}
  
 				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
+				
+				{{Image of uniform PC}}
 			
 			\subsubsection{Model construction}
 				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme. It is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
 				\cite{hongxin_zhang_introduction_2007}
-				Boundary representation was selected as the solid representation scheme as it is very suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfect which leads to a model which is more accurate, in that the model more accurately represents the real-world features.
+				Boundary representation was selected as the solid representation scheme as it is very well suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfections which leads to a model which is overall more accurate, in that the model more accurately represents the real-world features.
 				
 				The accuracy of the model is an important consideration for this investigation. The model was constructed as accurately as possible in order to maximise the chances of obtaining good quality matches, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
 				
-				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
+				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. 
+				
+				{Insert image of simple model}
+				
+				With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
 				\begin{figure}[H]
 					\centering
@@ -488,6 +494,7 @@
 				
 		\subsection{Level of detail of the 3D model}
 			\subsubsection{Objects}
+			%TODO: Refer to actual section. 'More on this later.'
 				As many objects as possible have been modelled to the best possible detail. This is done in order to facilitate investigating the effects of the number of objects and the level of detail of these objects on the quality and number of matches in the comparison process. The investigation will cover multiple level of details in order to document the affect. More on this later.
 			\subsubsection{Lighting}
 				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
@@ -498,12 +505,15 @@
 					
 					{{Image of modelled florescent lights}}
 				
-				\paragraph{External lights}
-					In order to accurately model the natural light which penetrates though the glass panes of the door, emmisive planes were placed behind the glass panes of the door section. These emmisive planes were each calibrated in order to best represent real-world conditions of the photograph.
+				\paragraph{Natural lighting}
+					In order to accurately model the natural light which penetrates though the glass panes of the door, emmisive planes were placed behind the glass panes of the door section. These emmisive planes were each calibrated in order to best represent real-world conditions of the photograph in terms of position, intensity and colour.
 					
 					{{Image of emmisive planes behind doors}}
 			\subsubsection{Texture}
 				Texture affects how an object interacts with light. Textures can be rough or smooth and can be arranged randomly or uniformly. Textures can reflect light specularly (mirror-like) or diffusely (randomly).
+				
+				%TODO: Explain texture use in the model
+				
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{light_reflection}
@@ -521,7 +531,7 @@
 				The gray pin board has a rough texture.
 				
 			\subsubsection{Image draping}
-				It is further possible to drape images of objects within the 3D model. Blender offers a feature known as UV Unwrap which enables one to wrap an image around a modelled object. The texture of the object then becomes the image.
+				It is further possible to drape images of objects within the 3D model. Blender offers a feature known as UV Unwrap which enables an image to be wrapped around a modelled object. The texture of the object then becomes the image.
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{blender_uv_unwrap_1}
