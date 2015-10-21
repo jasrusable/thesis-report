@@ -162,9 +162,7 @@
 		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
 		\cite{supreeth_sudhakaran_geospatial_2014}
 		
-		%TODO: Needs work
-		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. The company provides an application which enables a user to map out a particular building, and allows users to navigate the created map.
-		 
+		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. The company provides a mobile application which enables a user to map out a particular building, and allows users to navigate the created map.
 	
 	\subsection{Inertial measurements}
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning.
@@ -193,12 +191,11 @@
 			In order to accurately model an existing environment, raw data such as measurements or point clouds is needed to serve as a basis for the model creation. The raw data serves as the initial building block and reference for the model.
 		
 			\subsubsection{Data acquisition}
-				%TODO: Needs work
 				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference.
 				This data can come in the form of building plans, measured distances and directions or point clouds etc.
-				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points  within the point cloud.
-				Creating a model from building plans or other measurements involves defining model features in terms of parameters. 
+				Creating a model from building plans or other measurements involves defining model features in terms of parameters.
 				It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the physical real-world environment.
+				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points  within the point cloud.
 				
 			\subsubsection{Data preprocessing}
 				\paragraph{Cleaning laser scan point clouds}
