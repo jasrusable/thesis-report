@@ -550,15 +550,15 @@
 			
 			{{Image of different renderers}}
 			
-			For this investigation, the Cycles renderer was used as it offered superior results.
-			
 			Two quality settings where adjusted when creating renders.
+			%TODO: Describe the quality settings, add images.
 
 	\section{Comparing the photograph to the model}
 		In order to perform the comparison between the photograph and renders of the model, a testing framework is required.
 		The OpenCV features2d module offers various feature detection algorithms (SIFT, SURF, ORB) as well as feature matching algorithms (FLANN, BruteForce). Another OpenCV module used in this investigation was the image processing module which offers a number of image enhancement/manipulation functions which have been made use of in this investigation.
 		
 		\subsection{Testing framework}
+			%TODO: Needs work
 			In order to facilitate the investigative process, a framework was created using Python. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
 			
 			At the top level, the framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test or query image.
