@@ -422,6 +422,8 @@
 \chapter{Results}
 	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
 	
+	%TODO: Explain why GTL was selected
+	
 	\section{Photograph}
 		The test photograph for this investigation is of the front door section of the Geomatics Teaching Laboratory (GTL). The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
 		
@@ -433,12 +435,14 @@
 			\caption{GTL Door area}
 		\end{figure}
 		
+		%TODO: Add camera distortion parameters etc
+		
 	\section{3D model}
 		The model was created in an open source software package called Blender.
 		
 		\subsection{Creating the 3D model}
 			\subsubsection{Data acquisition}
-				In order to accurately model the scene of interest, a laser scan was conducted. The laser scanner was placed roughly in the centre of the GTL room and a single scan was taken. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
+				In order to accurately model the scene of interest, a laser scan of GTL was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was taken which captured the entire room. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
 				{{Insert Point Cloud image}}.
 				
@@ -453,7 +457,7 @@
 				
 				{{Image of cleaned PC}}
  
-				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for the scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
+				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for use throughout the entire scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
 				
 				{{Image of uniform PC}}
 			
@@ -468,7 +472,7 @@
 				
 				{Insert image of simple model}
 				
-				With the extremities constructed, finer and finder features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
+				With the extremities constructed, finer features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
 				\begin{figure}[H]
 					\centering
@@ -479,7 +483,7 @@
 				
 				In figure \ref{fig:simple_model} the walls and floor of the room have been modelled off of the point cloud. 
 				
-				Detail of the model was iteratively increased by modelling finer and finer details.
+				Detail of the model was iteratively increased by modelling the finer details.
 				
 				\begin{figure}[H]
 					\centering
@@ -494,17 +498,18 @@
 			\subsubsection{Objects}
 			%TODO: Refer to actual section. 'More on this later.'
 				As many objects as possible have been modelled to the best possible detail. This is done in order to facilitate investigating the effects of the number of objects and the level of detail of these objects on the quality and number of matches in the comparison process. The investigation will cover multiple level of details in order to document the affect. More on this later.
+				
 			\subsubsection{Lighting}
 				The GTL room is illuminated by florescent light panels, each containing three fluorescent tubes. The panels are rectangular with dimensions 0.5m by 1.5m. Additionally, light enters the room from the windows along the north wall, as well as through the glass panels within the door. So there are three sources of light illuminating the room.
 			
-				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating 3D models.
+				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating accurate 3D models.
 				
 				An important consideration for lighting with regards to this investigation is that lighting can vary. This includes the the variation of natural light over the diurnal cycle as well as variations due to weather conditions. Variations in artificial lighting is also important, such variations include lights being switched on or off, varying brightness etc.
 				
 				\paragraph{Overhead lights}
 					Overhead lights consisted of panels of florescent lights uniformly spaced throughout the ceiling. The each panel contained three fluorescent tubes. Theses light panels were reconstructed in the model and mimicked using emmisive planes subtended within a rectangle.
 					
-					The overhead lights have been placed in their respective real-world potions. 
+					The overhead lights have been placed in their respective real-world positions. 
 					
 					{{Image of modelled florescent lights}}
 				
@@ -547,6 +552,8 @@
 					\caption{The result of wrapping the model with the image (Source: vimeocdn.com)}
 					\label{fig:blender_uv_unwrap_2}
 				\end{figure}
+				
+				Image draping is another subject of investigation.
 				
 		\subsection{Renders}
 			Renders for this investigation where created using Blender's Cycles Renderer as it provided superior render quality when compared to the standard Blender Renderer.
