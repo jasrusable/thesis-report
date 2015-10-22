@@ -313,7 +313,13 @@
 			
 			Renders of the 3D model will be created using the different renderer engines, and under various different render settings. The effect of altering the render settings will be a subject of investigation.
 			
-			{{Insert rendered images here}}
+			\begin{figure}[H]
+				%TODO: Needs a source
+				\centering
+				\includegraphics[width=0.9\textwidth]{gtl_render_1}
+				\caption{GTL Render}
+				\label{fig:gtl_render_1}
+			\end{figure}
 			
 	\section{Comparison of the model to the photograph}
 		This section deals with the comparison of the photograph to the render of the 3D model.
@@ -444,22 +450,38 @@
 			\subsubsection{Data acquisition}
 				In order to accurately model the scene of interest, a laser scan of GTL was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was taken which captured the entire room. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
-				{{Insert Point Cloud image}}.
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{raw_point_cloud_1}
+					\caption{Raw point cloud}
+				\end{figure}
 				
 			\subsubsection{Data preprocessing}
 				The point cloud in question was manually cleaned in a software program called CloudCompare. The purpose of cleaning the point cloud is to remove erroneous and superfluous data in order to increase the manageability of working with the point cloud.
 	
 				The first step cleaning the point cloud involved cutting out the sections which were not to be part of this investigation. This trivial process was performed in a software package called CloudCompare.
 				
-				{{Image of trimmed PC}}
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{trimmed_point_cloud_1}
+					\caption{Trimmed point cloud}
+				\end{figure}
 				
 				The second step in cleaning the point cloud involved removing points which existed outside of the rooms confines, such as points outside of the glass panels of the door.
 				
-				{{Image of cleaned PC}}
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{cleaned_point_cloud_1}
+					\caption{Cleaned point cloud}
+				\end{figure}
  
 				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for use throughout the entire scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
 				
-				{{Image of uniform PC}}
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{uniform_point_cloud_1}
+					\caption{Uniform point cloud}
+				\end{figure}
 			
 			\subsubsection{Model construction}
 				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme. It is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
