@@ -569,15 +569,16 @@
 		
 		\subsection{Testing framework}
 			%TODO: Needs work
-			In order to facilitate the investigative process, a framework was created using Python. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
+			In order to facilitate the investigative process, a framework was created using the programming language Python. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
 			
-			At the top level, the framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test or query image.
+			At the top level, the framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test and or query image.
 			
 			{{Insert image of creating a TestCase with iPython}}
 			
 		\subsection{Results analysis}
-			The quality of a comparison is determined by two factors, the number of matches, and the quality of the matches. The number of matches refers to the number of matched feature/key point pairs found in the comparison process. The quality of a match refers to the accuracy of a matched key point pair, basically the degree to which a matched key points represent the same real world point. So a match would be of high quality if the key points of the match precisely represent the same real-world point.
-			Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
+			\subsubsection{Comparison quality}
+				The quality of a comparison is determined by two factors, the number of matches, and the quality of the matches. The number of matches refers to the number of matched feature/key point pairs found in the comparison process. The quality of a match refers to the accuracy of a matched key point pair, basically the degree to which a matched key points represent the same real world point. So a match would be of high quality if the key points of the match precisely represent the same real-world point.
+				Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
 
 \chapter{Discussions}
 
