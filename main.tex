@@ -607,8 +607,6 @@
 			
 			The framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test and or query image.
 			
-			{{Insert image of creating a TestCase with iPython}}
-			
 		\subsection{Comparison results}
 			The comparison process was run a number of times with varying parameters adjusted in order to investigate and document the effects of the parameters on the quality of each comparison. The parameters which where adjusted have been discussed above in section \ref{test_parameters}. The results of these test parameters will be presented below.
 			
@@ -627,7 +625,7 @@
 			
 			\subsubsection{Photograph adjustments}
 				\paragraph{Blurring}
-					Bluring was performed using OpenCvs Gaussian blur function. The Gaussian blur function takes two parameters x and y which determine the magnitude of the blur along each x and y axis.
+					Blurring was performed on the test image using OpenCV's Gaussian blur function. The Gaussian blur function takes two parameters x and y which determine the magnitude of the blur along each x and y axis. The following figures show the results of the comparison using the blur along each axis on the test image.
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{x_blur}
