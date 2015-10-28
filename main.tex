@@ -425,6 +425,15 @@
 					\caption{Edge detection example (Source: wikipedia.org)}
 					\label{fig:edge_detection}
 				\end{figure}
+				
+		\subsection{Comparison process}
+			\subsubsection{Feature Detectors}
+				\paragraph{SIFT}
+				\paragraph{SURF}
+				\paragraph{ORB}
+			\subsubsection{Feature matchers}
+				\paragraph{Brute Force}
+				\paragraph{FLANN}
 
 \chapter{Results}
 	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
@@ -603,8 +612,36 @@
 		\subsection{Comparison results}
 			The comparison process was run a number of times with varying parameters adjusted in order to investigate and document the effects of the parameters on the quality of each comparison. The parameters which where adjusted have been discussed above in section \ref{test_parameters}. The results of these test parameters will be presented below.
 			
+			\subsubsection{Benchmark}
+				%TODO: Fix comparason ambiguity
+				In order to be able to qualitatively compare results of the comparison process, the best comparison result will serve as the benchmark from which results will be compared. It so happens that the best comparison result was that of comparing the raw photograph to the raw rendered image with the ORB detector and Brute Force matcher.
+				
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{best_comparason}
+					\caption{Best comparison}
+					\label{fig:best_comparason}
+				\end{figure}
+				
+				The comparison result in figure \ref{fig:best_comparason} is the best attained result of all comparisons which have been made. As such, it serves as the reference result to which all other results will be compared. The figure contains two images, the left image is the test image which in the context of this investigation is the photograph of the real-world scene. The Right image is the query image and is the rendered image of the 3D model. The green circles in the images represent keypoints or features and the green lines indicate the matched keypoints between the two images. Finally, the white boundary box in the query image represents where the program thinks the test image fits into the query image. This boundary box represents a set of transformation parameters which relate the two images.
+			
 			\subsubsection{Photograph adjustments}
 				\paragraph{Blurring}
+					Bluring was performed using OpenCvs Gaussian blur function. The Gaussian blur function takes two parameters x and y which determine the magnitude of the blur along each x and y axis.
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{x_blur}
+						\caption{Blurring the photograph along the x axis}
+						\label{fig:x_blur}
+					\end{figure}
+					Blurring the test image along the x direction 
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{y_blur}
+						\caption{Blurring the photograph along the y axis}
+						\label{fig:y_blur}
+					\end{figure}
+					
 				\paragraph{Edge detection}
 				
 			\subsubsection{Model adjustments}
