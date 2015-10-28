@@ -389,6 +389,7 @@
 			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features and functions, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features module (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
 
 	\section{Test parameters}
+	\label{test_parameters}
 		%TODO: This entire sections needs some attention
 		There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of, and the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
 		
@@ -588,23 +589,38 @@
 			%TODO: Describe the quality settings, add images.
 
 	\section{Comparing the photograph to the model}
-		In order to perform the comparison between the photograph and renders of the model, a testing framework is required.
+		In order to perform the comparison between the photograph and renders of the model, a testing framework has been created.
 		The OpenCV features2d module offers various feature detection algorithms (SIFT, SURF, ORB) as well as feature matching algorithms (FLANN, BruteForce). Another OpenCV module used in this investigation was the image processing module which offers a number of image enhancement/manipulation functions which have been made use of in this investigation.
 		
 		\subsection{Testing framework}
 			%TODO: Needs work
-			In order to facilitate the investigative process, a framework was created using the programming language, Python. This framework encapsulated all the various features and functions of OpenCV pertaining to this investigation.
+			In order to facilitate the investigative process, a framework was created using the programming language Python. This framework encapsulated all the various features and functions of OpenCV pertaining to this paper.
 			
 			The framework has a TestCase class which encapsulates a test image, query image, a feature detection method and a feature matching method. Additionally, a TestCase encapsulates any number of image processing functions and parameters which are programmability applied to a test and or query image.
 			
 			{{Insert image of creating a TestCase with iPython}}
 			
-		\subsection{Results analysis}
-			\subsubsection{Comparison quality}
-				The quality of a comparison is determined by two factors, the number of matches, and the quality of the matches. The number of matches refers to the number of matched feature/key point pairs found in the comparison process. The quality of a match refers to the accuracy of a matched key point pair, basically the degree to which a matched key points represent the same real world point. So a match would be of high quality if the key points of the match precisely represent the same real-world point.
-				Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
+		\subsection{Comparison results}
+			The comparison process was run a number of times with varying parameters adjusted in order to investigate and document the effects of the parameters on the quality of each comparison. The parameters which where adjusted have been discussed above in section \ref{test_parameters}. The results of these test parameters will be presented below.
+			
+			\subsubsection{Photograph adjustments}
+				\paragraph{Blurring}
+				\paragraph{Edge detection}
+				
+			\subsubsection{Model adjustments}
+				\paragraph{Level of detail}
+				\paragraph{Image draping}
+				\paragraph{Lighting}
+				\paragraph{Renders}
+				
+			\subsubsection{Framework adjustments}
+				\paragraph{Detectors}
+				\paragraph{Matchers}
 
 \chapter{Discussions}
+	\section{Comparison quality}
+		The quality of a comparison is determined by two factors, the number of matches, and the quality of the matches. The number of matches refers to the number of matched feature/key point pairs found in the comparison process. The quality of a match refers to the accuracy of a matched key point pair, basically the degree to which a matched key points represent the same real world point. So a match would be of high quality if the key points of the match precisely represent the same real-world point.
+		Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
 
 \chapter{Conclusions and future work}
 
