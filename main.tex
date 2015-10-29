@@ -641,16 +641,63 @@
 					\end{figure}
 					
 				\paragraph{Edge detection}
-				
+					Performing edge detection on the test and query image produced very poor quality matches. Features have been detected but have been poorly matched resulting in an overall poor comparison result.
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{edge_detection_results}
+						\caption{Edge detection yielded poor results}
+						\label{fig:edge_detection_results}
+					\end{figure}
+					
 			\subsubsection{Model adjustments}
 				\paragraph{Level of detail}
-				\paragraph{Image draping}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{level_of_detail_results}
+						\caption{Decreasing the level of detail greatly reduced the quality of the comparison}
+						\label{fig:level_of_detail_results}
+					\end{figure}
 				\paragraph{Lighting}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{reduced_lighting_results}
+						\caption{Decreasing the accuracy of the lighting yielded poorer results}
+						\label{fig:reduced_lighting_results}
+					\end{figure}
+					
 				\paragraph{Renders}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.9\textwidth]{low_quality_results}
+						\caption{Decreasing the accuracy of the lighting yielded poorer results}
+						\label{fig:low_quality_results}
+					\end{figure}
 				
 			\subsubsection{Framework adjustments}
 				\paragraph{Detectors}
+					
 				\paragraph{Matchers}
+				
+				\paragraph{ORB and Brute Force}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=1\textwidth]{best_comparason}
+						\caption{ORB and Brute Force}
+						\label{fig:orb_and_brute_force}
+					\end{figure}
+				\paragraph{ORB and FLANN}
+					Incompatible.
+				
+				\paragraph{SIFT and Brute Force}
+					Incompatible.
+				
+				\paragraph{SIFT and FLANN}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=1\textwidth]{sift_and_flann_results}
+						\caption{ORB and Brute Force}
+						\label{fig:sift_and_flann_results}
+					\end{figure}
 
 \chapter{Discussions}
 	\section{Comparison quality}
