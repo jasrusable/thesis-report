@@ -632,7 +632,7 @@
 						\caption{Blurring the photograph along the x axis}
 						\label{fig:x_blur}
 					\end{figure}
-					Blurring the test image along the x direction 
+					
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{y_blur}
@@ -640,8 +640,15 @@
 						\label{fig:y_blur}
 					\end{figure}
 					
+					Blurring the test image along the x direction slightly degraded the quality of the comparison. Blurring the test image along the y axis severely decreased the quality of the comparison.
+					When blurring along either directions, the quality of the matches was not impaired, however there were significantly fewer features/key points when blurring along th y. The reason for this is not known.
+					
 				\paragraph{Edge detection}
-					Performing edge detection on the test and query image produced very poor quality matches. Features have been detected but have been poorly matched resulting in an overall poor comparison result.
+					Performing edge detection on the test and query image produced very poor quality matches. A number of edge detection methods were employed using various settings, none of which produced any meaningful results.
+					%TODO: Figure beolow was just for display purposes.
+					As such, the figure \ref{fig:edge_detection_results} below of the edge detection comparison exists only to
+					
+					Features have been detected but have been poorly matched resulting in an overall poor comparison result.
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{edge_detection_results}
@@ -651,6 +658,7 @@
 					
 			\subsubsection{Model adjustments}
 				\paragraph{Level of detail}
+					In figure \ref{fig:level_of_detail_results} the image of the air vent has been removed from the model, decreasing the level of detail of the model. The result was that there were fewer features/key points in total, and the matching of the features was poorer. From this it can be deduced that the higher the level of detail of the model, the higher the quality of the comparison, in terms of number of features found, as well as the quality of the matches.
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{level_of_detail_results}
@@ -658,6 +666,7 @@
 						\label{fig:level_of_detail_results}
 					\end{figure}
 				\paragraph{Lighting}
+					Reducing the accuracy of the lighting, the comparison yielded significantly poorer results.
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=0.9\textwidth]{reduced_lighting_results}
