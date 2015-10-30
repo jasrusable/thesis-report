@@ -64,32 +64,35 @@
 		This report concerns the viability of an alternate indoor positioning method. The method involves comparing a photograph to a 3D interior model in order to determine the location of the person or object which took the photograph. 3D interior models are becoming more and more prominent. New technological advancements and techniques are making it cheaper, quicker and easier to generate interior 3D models. Combining the recent prominence of 3D interior models with the ubiquity of camera equipped smart phones and a new indoor positioning system presents itself. This system depends upon the matching of a photograph to a 3D interior model in order to locate the photographer. The primary focus of this paper is on the matching of a photograph to a 3D interior model.
 	
 	\section{Problem statement}
-		The objectives of this report are therefore to do something.
+		The objective of this investigation is to determine if it is possible to compare a 3D model to a photograph of a real-world scene within that model.
 		
 	\section{Research questions}
 		\begin{enumerate}
-			\item How can a photograph be matched to a 3D model?
-			\item How does the level of detail of the model affect the matching?
-			\item How does lighting affect the matching?
-			\item How does the texture of modelled objects affect the matching?
-			\item How does the quality of model renders affect the matching?
-			\item How does the quality of the photograph affect the matching?
-			\item What is the affect of image enhancements on the matching?
+			\item How can a photograph be compared to a 3D model?
+			\item How does the level of detail of the model affect the comparison quality?
+			\item How does lighting affect the comparison?
+			\item How does the texture of modelled objects affect the comparison quality?
+			\item How does the quality of model renders affect the comparison?
+			\item What is the affect of image enhancements on the comparison?
 		\end{enumerate}
 	
 	\section{Plan of Development}
-		This report begins by looking at work related to indoor positioning systems, including existing principles and techniques. It appears that there is very little work specifically related to comparing photographs to 3D models or to rendered images of 3D models. Various radio and non-radio indoor positioning technologies are covered in the related work chapter.
+		This report begins by looking at work related to indoor positioning systems, including existing principles and techniques. Various radio and non-radio indoor positioning technologies are covered in the related work chapter. It appears that there is very little work specifically related to comparing photographs to 3D model.
 		
-		After the related work chapter, the method is explained. The method contains three sections. The first section deals with the photograph, the second section concerns the 3D interior model and covers how a 3D model is created and modelled and rendered. The last section concerns the comparison of the photograph to the 3D model.
+		After the related work chapter, the method of this investigation is detailed. The method contains three sections. The first section deals with the photograph, the second section concerns the 3D interior model and covers how a 3D model is created and modelled and rendered. The last section concerns the comparison of the photograph to the 3D model.
 		
 		After the method chapter, results are presented and discussed. Again, there are three sections in the results chapter, photograph, 3D model and comparison of the photograph to the model.
+		
+		After the results chapter, a discussion chapter discusses various things.
+		
+		Thereafter conclusions are drawn and future work is discussed.
 
 \newpage
 \chapter{Related Work}
 	No previous work pertaining specifically to the comparison of photography to 3D models has been found. As such, the sections to follow will discuss work related to indoor positioning systems in general. This will include various principles as well as applications. Two main branches of technologies will be covered, namely radio and non-radio technologies.
 	
 	\section{Radio technologies}
-		Any wireless technology can in theory, be used for positioning. This is due to the nature of the propagation of electromagnetic waves through a medium. There are three main principles which make use of radio technologies, each of these principles will be outlined briefly in the subsections below. Some applications of these principles will also be discussed and presented.
+		Any wireless technology can in theory be used for positioning. This is due to the nature of the propagation of electromagnetic waves through a medium. There are three main principles which make use of radio technologies, each of these principles will be outlined briefly in the subsections below. Some applications of these principles will also be discussed and presented.
 	
 	\subsection{Principles of radio technologies}
 		\subsubsection{Time of arrival}
@@ -259,10 +262,9 @@
 			In terms of 3D modelling, level of detail refers to how thoroughly real-world objects have been modelled and how closely those modelled objects resemble their real-world counterparts.
 			
 			\begin{figure}[H]
-				%TODO: Needs a source
 				\centering
 				\includegraphics[width=1\textwidth]{level_of_detail_example}
-				\caption{Level of detail example}
+				\caption{Level of detail example (http://www.in-ex.hu/)}
 			\end{figure}
 			
 			The figure above illustrates the concept of level of detail. A sphere has been modelled at various levels of detail, decreasing from left to right. Models with a low level of detail are quicker to create and less computationally intensive to manipulate, high level of detail models take longer to create but increase the quality of the model.
@@ -275,16 +277,15 @@
 					\subparagraph{Colour temperature}
 						The colour temperature of a light source is the temperature of an ideal black-body radiator that radiates light of comparable hue to that of the light source. Colour temperatures are typically statued in the unit of absolute temperature, the Kelvin, with the symbol K.
 						\begin{figure}[H]
-							%TODO: Needs a source
 							\centering
 							\includegraphics[width=1\textwidth]{colour_temperature}
-							\caption{Colour temperatures}
+							\caption{Colour temperatures (http://www.seesmartled.com/)}
 						\end{figure}
 						The figure above shows how colour temperatures relate to real world conditions.
 				
 					\subparagraph{Position of lights}
-						%TODO: Needs work, use better images
-						In order to accurately replicate shadows and intensities, the lighting in a model needs to be strategically placed as well as calibrated.
+						%TODO: Use better images
+						In order to accurately replicate shadows and intensities of real-world conditions, the lighting in a 3D model needs to be strategically placed as well as calibrated in order to best reflect the real-world conditions.
 						
 						\begin{figure}[H]
 							\centering
@@ -304,7 +305,6 @@
 				Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
 				\cite{e._paul_degarmo_materials_2003}
 				Textures are applied to surfaces in 3D models in order to accurately represent real-world textures. Textures affect not only the visual appearance of a surface, but also the way light interacts with that textured surface.
-					
 			
 		\subsection{Renderings of the model}
 			Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered.
@@ -314,7 +314,6 @@
 			Renders of the 3D model will be created using the different renderer engines, and under various different render settings. The effect of altering the render settings will be a subject of investigation.
 			
 			\begin{figure}[H]
-				%TODO: Needs a source
 				\centering
 				\includegraphics[width=0.9\textwidth]{gtl_render_1}
 				\caption{GTL Render}
@@ -329,10 +328,9 @@
 		\subsection{Performing the comparison}
 			\subsubsection{Feature matching}
 				\begin{figure}[H]
-					%TODO: Needs a source
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_homography_example}
-					\caption{Feature homography}
+					\caption{Feature homography (http://docs.opencv.org/)}
 					\label{fig:feature_homogrophy}
 				\end{figure}
 				
@@ -344,10 +342,9 @@
 				To provide an example of what key points are, consider the image below:
 				
 				\begin{figure}[H]
-					%TODO: Needs a source
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_building}
-					\caption{Feature building}
+					\caption{Feature building (docs.opencv.org)}
 					\label{fig:feature_building}
 				\end{figure}
 				
@@ -362,10 +359,9 @@
 				Consider the image below:
 				
 				\begin{figure}[H]
-					%TODO: Needs a source
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_detection}
-					\caption{Feature detection}
+					\caption{Feature detection (http://docs.opencv.org)}
 				\end{figure}
 				
 				In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally by small amounts, there is no variation, the blue box still contains only green. This represents a poor feature/key point. 
@@ -382,7 +378,6 @@
 			In the context of this proposed new indoor positioning technique, the test image would be a photograph that a user has supplied who wishes to know their location within an environment. The query image would be one of many renders of the 3D model of that same environment.
 			
 			The idea is that the test image could be compared to a number of renders from different locations within the environment. Once a quality comparison is made, the location of the photographer can be determined using photogrammetric techniques, or by using georeferenced renders, however this is outside of the scope of this paper, but will be further discussed in the future work chapter below.
-			%TODO: Reference to Future Work chapter
 	
 	\section{Tools}
 		\subsection{OpenCV}
@@ -450,8 +445,6 @@
 			\includegraphics[width=1\textwidth]{gtl_door_area}
 			\caption{GTL Door area}
 		\end{figure}
-		
-		%TODO: Add camera distortion parameters etc
 		
 	\section{3D model}
 		The model was created in an open source software package called Blender.
@@ -721,19 +714,29 @@
 		Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
 
 \chapter{Conclusions and future work}
+	Based on the results above, it is possible to compare a photograph to a 3D model by creating renderings of the model and using image comparison software.
+	
+	It is clear that the accuracy of the model and the quality of a comparison is positively correlated, that is the greater the quality of the model, the higher the quality of the comparison.
+	
 	\section{Improving and furthering the investigation}
+		
 		
 	\section{Determining photographer's location}
 		The main focus of this paper is on the comparison process between a photograph and a 3D model. What has not been discussed in great detail is how the comparison will enable the location of the photographer to be determined. These two problems have been separated due to the fact that the determination of the photographers location will not be possible without a sufficiently high quality comparison result. Given that the results of this investigation have indicated that a high quality comparison is realistically achievable, future work could include actually using the comparison results data in order to determine from where inside the 3D model the photograph was take. Two possible methods for achieving this are briefly introduced in the subsections below.
 		\subsection{Geotagging renders}
-			The most simple method of determining the photographers location would be to geotag each render of a series of renders of a 3D model. A photograph would then be compared against each render. The comparison with the highest quality will then be determined and the geotag of that render would indicate roughly where in the 3D model the photograph was taken, which would then sent to the photographer.
-			There are a number of implementation problems which exist, some of the main problems are worth mentioning here. 
+			The most simple method of determining the photographers location would be to geotag each render of a series of renders of a 3D model. A photograph would then be compared against each render. The comparison with the highest quality will then be determined and the geotag of that render would indicate roughly where in the 3D model the photograph was taken, which would then sent to the photographer as their location.
+			There are a number of implementation problems which exist, some of the main problems are worth mentioning here.
 			The first problem is that as stated in section \ref{comparison_quality}, the quality of a comparison so far has not been able to be quantified. For the geotagging location method to be viable, a programmatic method of quantifying the quality of a comparison is needed.
-			Another problem is that of geotagging renders. 
+			Another problem is that of geotagging renders. This process needs to be done automatically in order to be viable.
 		\subsection{Photogrammetric principles}
+			Another method for determining the photographers location involves making use of photogrammetric principles. Using the collinearity equations, a resection can be performed to determine the location of the camera.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{collinearity_equations}
+				\caption{Collinearity Equations}
+				\label{fig:collinearity_equations}
+			\end{figure}
 			
-		
-
 \newpage
 \printbibliography
 
