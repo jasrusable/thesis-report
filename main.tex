@@ -716,14 +716,23 @@
 
 \chapter{Discussions}
 	\section{Comparison quality}
+	\label{comparison_quality}
 		The quality of a comparison is determined by two factors, the number of matches, and the quality of the matches. The number of matches refers to the number of matched feature/key point pairs found in the comparison process. The quality of a match refers to the accuracy of a matched key point pair, basically the degree to which a matched key points represent the same real world point. So a match would be of high quality if the key points of the match precisely represent the same real-world point.
 		Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. In order to solve this problem, matches are visually inspected in order to determine their quality.
 
 \chapter{Conclusions and future work}
 	\section{Improving and furthering the investigation}
+		
 	\section{Determining photographer's location}
-		\subsection{Photogrammetric principles}
+		The main focus of this paper is on the comparison process between a photograph and a 3D model. What has not been discussed in great detail is how the comparison will enable the location of the photographer to be determined. These two problems have been separated due to the fact that the determination of the photographers location will not be possible without a sufficiently high quality comparison result. Given that the results of this investigation have indicated that a high quality comparison is realistically achievable, future work could include actually using the comparison results data in order to determine from where inside the 3D model the photograph was take. Two possible methods for achieving this are briefly introduced in the subsections below.
 		\subsection{Geotagging renders}
+			The most simple method of determining the photographers location would be to geotag each render of a series of renders of a 3D model. A photograph would then be compared against each render. The comparison with the highest quality will then be determined and the geotag of that render would indicate roughly where in the 3D model the photograph was taken, which would then sent to the photographer.
+			There are a number of implementation problems which exist, some of the main problems are worth mentioning here. 
+			The first problem is that as stated in section \ref{comparison_quality}, the quality of a comparison so far has not been able to be quantified. For the geotagging location method to be viable, a programmatic method of quantifying the quality of a comparison is needed.
+			Another problem is that of geotagging renders. 
+		\subsection{Photogrammetric principles}
+			
+		
 
 \newpage
 \printbibliography
