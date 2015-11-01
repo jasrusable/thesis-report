@@ -48,7 +48,7 @@
 \newpage
 \chapter*{Abstract}
 	\addcontentsline{toc}{chapter}{Abstract}
-	This paper investigates the viability of a new indoor positioning system which is to make use of the comparison of digital imagery to 3D models. An example scenario would be a person wishing to know which room they are in within a building. A 3D model of the building exists. The person takes a few photographs of their surroundings, the photographs are then compared to the 3D model and the result is a location estimate presented to the person. The process involves comparing the photograph to the 3D model of the building. The main focus of this paper is on the comparison of the photograph to the 3D model. Future work would involve the investigating the process actually determining the position of the photographer, given that the comparison of the photograph to the 3D model is successful.
+	This paper investigates the viability of a new indoor positioning system which is to make use of the comparison of digital imagery to 3D models. An example scenario would be a person wishing to know which room they are in within a building. A 3D model of the building exists. The person takes a few photographs of their surroundings in the room, the photographs are then compared to the 3D model and the result is a location estimate presented to the person. The process involves comparing the photograph to the 3D model of the building. The main focus of this paper is on the comparison of the photograph to the 3D model. Future work would involve the investigating the process actually determining the position of the photographer, given that the comparison of the photograph to the 3D model is sufficiently successful.
 
 \newpage
 \tableofcontents
@@ -61,25 +61,25 @@
 \setcounter{page}{1}
 \chapter{Introduction}
 	\section{Subject of the Report}
-		This report concerns the viability of an alternate indoor positioning method. The method involves comparing a photograph to a 3D interior model in order to determine the location of the person or object which took the photograph. 3D interior models are becoming more and more prominent. New technological advancements and techniques are making it cheaper, quicker and easier to generate interior 3D models. Combining the recent prominence of 3D interior models with the ubiquity of camera equipped smart phones and a new indoor positioning system presents itself. This system depends upon the matching of a photograph to a 3D interior model in order to locate the photographer. The primary focus of this paper is on the matching of a photograph to a 3D interior model.
+		This report concerns the viability of an alternate indoor positioning method. The method involves comparing a photograph to a 3D interior model in order to determine the location of a person or object which took the photograph. 3D interior models are becoming more and more prominent. New technological advancements and techniques are making it cheaper, quicker and easier to generate interior 3D models. Combining the recent prominence of 3D interior models with the ubiquity of camera equipped smart phones and a new indoor positioning system presents itself. This system depends upon the matching of a photograph to a 3D interior model in order to locate the photographer. The primary focus of this paper is on the comparison of a photograph to a 3D interior model. The influence of various factors on the quality of the comparison will be tested and documented and presented in this report.
 	
 	\section{Problem statement}
-		The objective of this investigation is to determine if it is possible to compare a 3D model to a photograph of a real-world scene within that model.
+		The objective of this investigation is to determine if it is possible to compare a photograph of a real-world scene to a 3D interior model.
 		
 	\section{Research questions}
 		\begin{enumerate}
 			\item How can a photograph be compared to a 3D model?
 			\item How does the level of detail of the model affect the comparison quality?
-			\item How does lighting affect the comparison?
+			\item How does lighting affect the comparison quality?
 			\item How does the texture of modelled objects affect the comparison quality?
-			\item How does the quality of model renders affect the comparison?
-			\item What is the affect of image enhancements on the comparison?
+			\item How does the quality of model renders affect the comparison quality?
+			\item What is the affect of image enhancements on the comparison quality?
 		\end{enumerate}
 	
 	\section{Plan of Development}
-		This report begins by looking at work related to indoor positioning systems, including existing principles and techniques. Various radio and non-radio indoor positioning technologies are covered in the related work chapter. It appears that there is very little work specifically related to comparing photographs to 3D model.
+		This report begins with a chapter looking at work related to indoor positioning systems, including existing principles and techniques. Various radio and non-radio indoor positioning technologies are covered in this related work chapter. It appears that there is very little work specifically related to comparing photographs to 3D model.
 		
-		After the related work chapter, the method of this investigation is detailed. The method contains three sections. The first section deals with the photograph, the second section concerns the 3D interior model and covers how a 3D model is created and modelled and rendered. The last section concerns the comparison of the photograph to the 3D model.
+		After the related work chapter, the method of this investigation is detailed. The method contains three sections, each sections deals with a specific component. The first section deals with the photograph, the second section concerns the 3D interior model and covers how a 3D model is created and modelled and rendered. The last section concerns the actual comparison of the photograph to the 3D model.
 		
 		After the method chapter, results are presented and discussed. Again, there are three sections in the results chapter, photograph, 3D model and comparison of the photograph to the model.
 		
@@ -89,39 +89,42 @@
 
 \newpage
 \chapter{Related Work}
-	No previous work pertaining specifically to the comparison of photography to 3D models has been found. As such, the sections to follow will discuss work related to indoor positioning systems in general. This will include various principles as well as applications. Two main branches of technologies will be covered, namely radio and non-radio technologies.
+	No previous work pertaining specifically to the comparison of photography to 3D models has been found. As such, this chapter will discuss work related to indoor positioning systems in general. This will include various principles as well as applications of these principles. 
+	
+	Two main branches of technologies exist and will be covered, these are radio and non-radio technologies.
 	
 	\section{Radio technologies}
-		Any wireless technology can in theory be used for positioning. This is due to the nature of the propagation of electromagnetic waves through a medium. There are three main principles which make use of radio technologies, each of these principles will be outlined briefly in the subsections below. Some applications of these principles will also be discussed and presented.
+		Any wireless technology can in theory be used for positioning. This is due to the nature of the propagation of electromagnetic waves through a medium, these propagations are often predictable in terms of their velocity and attenuation rates. There are three main principles which make use of radio technologies, each of these principles will be outlined briefly in the subsections below. Some applications of these principles will also be discussed and presented.
 	
 	\subsection{Principles of radio technologies}
 		\subsubsection{Time of arrival}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{time_of_arrival}
-				\caption{Time of arrival}
+				\includegraphics[width=1\textwidth]{time_of_arrival}
+				\caption[Time of arrival]{A distance from the receiver to each transmitter is determined using known signal velocities and measured time differences. Trilateration of these distances yields position. (intechopen.com)}
 				\label{fig:time_of_arrival}
 			\end{figure}
 			
-			Time of arrival (or time of flight) is the travel time of a radio signal from a single transmitter to a single remote receiver. The basic observable is time. A distance can be directly calculated using the known propagation velocity of signals with the basic observable of change in time. Location can then be determined using multi-lateration, this requires a setup of at least one receiver and three transmitters or vise versa.
-			Required with such systems is the synchronization of clocks between receivers and transmitters in order to determine the propagation time of the signals.
-			A significant pitfall of time of travel systems is that they suffer greatly from effects such as multi-path.
+			Time of arrival (or time of flight) is the travel time of a radio signal from a single transmitter to a single remote receiver. The basic observable is change in time. A distance can be directly calculated using the known propagation velocity of signals with the basic observable of change in time. Location can then be determined using multi-lateration, this requires a setup of at least one receiver and three transmitters or vise versa.
+			Required with such systems is the synchronization of clocks between receivers and transmitters in order to correctly determine the propagation time of the signals from node to node.
+			A significant pitfall of time of travel systems is that they suffer greatly from effects such as multi-path in which signals are reflected off nearby objects and sensed multiple times.
 			\cite{k._pahlavan_wideband_1998}
 			
-			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received - transmitted). Tri-lateration is then used to determine a unique location of the receiver.
+			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received time - transmitted time). Tri-lateration is then used to determine a unique location of the receiver.
 		
 		\subsubsection{Received signal strength indication}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{rssi}
-				\caption{RSSI}
+				\includegraphics[width=1\textwidth]{rssi}
+				\caption[RSSI]{Received signal strength indication is used to estimate a distance from a transmitter. (sensorsmag.com)}
 				\label{fig:rssi}
 			\end{figure}
-			Received signal strength indication (RSSI) is a measure of the power level received by a sensor. Distance can be approximated between a transmitter and receiver based on the relationship between the transmitted and received signal strength. Multi-lateration can be used to determine the location of a sensor.
-			A downside to this technique is that the relationship between received signal strength and distance has to be predetermined.
+			Received signal strength indication (RSSI) is a measure of the power level received by a sensor. Distance can be approximated between a transmitter and receiver based on the relationship between the transmitted and received signal strength. As the distance increases between a receiver and transmitter, the received signal strength diminishes (attenuation). The relationship between signal strength drop off and distance from transmitter is known. The combination of the known signal drop off relationship and the sensed signal strength allows for the determination of distance from the transmitter. Multi-lateration can then be used to determine the location of a receiver.
+			A downside to this technique is that the relationship between received signal strength and distance has to be predetermined and precisely known and this often requires mapping by hand.
 			
-			Figure \ref{fig:rssi} illustrates the principle of RSSI. Received signal levels decrease radially from the transmitter.
+			Figure \ref{fig:rssi} illustrates the principle of RSSI. Received signal levels decrease radially from the transmitter (assuming no interference from other objects).
 		
+		%TODO: Continue working from here.		
 		\subsubsection{Angle of arrival}
 			\begin{figure}[H]
 				\centering
