@@ -97,6 +97,7 @@
 		Any wireless technology can in theory be used for positioning. This is due to the nature of the propagation of electromagnetic waves through a medium, these propagations are often predictable in terms of their velocity and attenuation rates. There are three main principles which make use of radio technologies, each of these principles will be outlined briefly in the subsections below. Some applications of these principles will also be discussed and presented.
 	
 	\subsection{Principles of radio technologies}
+		\label{radio_principles}
 		\subsubsection{Time of arrival}
 			\begin{figure}[H]
 				\centering
@@ -124,48 +125,49 @@
 			
 			Figure \ref{fig:rssi} illustrates the principle of RSSI. Received signal levels decrease radially from the transmitter (assuming no interference from other objects).
 		
-		%TODO: Continue working from here.		
 		\subsubsection{Angle of arrival}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{angle_of_arrival}
-				\caption{Angle of arrival}
+				\includegraphics[width=1\textwidth]{angle_of_arrival}
+				\caption[Angle of arrival]{Angle of arrival works by using a sensor array to determine the angle of arrival of incoming radio signals (http://etutorials.org/)}
 				\label{fig:angle_of_arrival}
 			\end{figure}
-			The principle of angle of arrival works be determining the angle from which a signal is received at a receiver. The angle of arrival is typically determined using the time difference of arrival between multiple antennas in a sensor array. Position is determined with multi-angulation using readings from multiple transmitters.
+			The principle of angle of arrival works by determining the angle from which a signal is received at a receiver, transmitted from a transmitter who's position is known. The angle of arrival is typically determined using the time difference of arrival between multiple antennas in a sensor array. Position is determined using multi-angulation from readings from multiple transmitters.
 			Angle of arrival systems also suffer from effects such as multi-path.
 			
 			Figure \ref{fig:angle_of_arrival} illustrates the principle of angle of arrival. In the figure, $B_1$ and $B_2$ each represent a transmitter. Their signals are detected by the receiver, M.
 			
 	\subsection{Applications of radio technologies}
 		\subsubsection{Wi-Fi based systems}
-			Wi-Fi based technologies are based on measurements such as time of arrival (TOA), time difference of arrival (TDOA) and direction of arrival (DOA). However these techniques are severely impaired when line of sight is not achievable. 
-			These techniques suffer due to objects such as walls and floors which attenuate and reflect the signal, directly affecting accuracies.
+			Wi-Fi based technologies are based on measurements such as time of arrival (TOA), time difference of arrival (TDOA) and direction of arrival (DOA). A pitfall of these techniques is that they are severely impaired when line of sight is not achievable. 
+			These techniques also suffer due to objects such as walls and floors which attenuate and reflect signals, directly affecting accuracies.
 		
-			An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. So instead of measuring the time or angle of received signals, the signal strength is measured. This negates many of the above mentioned deficiencies. A similar system has been employed by animal trackers with directional antennas.
+			An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. Instead of measuring the time or angle of received signals, the received signal strength is measured. This negates many of the above mentioned deficiencies as the received signal strength can be mapped out in order to improve accuracies and reliability. A similar system has been employed by animal trackers with directional antennas.
 			\cite{yongguang_chen_signal_2002}
 	
 		\subsubsection{Blue-tooth systems}
-			Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using this technology. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device.
+			Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using this technology. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device. Nodes typically do not have a great range and so in order to provide location services for an entire building, many nodes will need to be purchased and set up which has a high cost associated with it.
 		
-			Apple has developed a protocol called iBeacon. This protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to a particular iBeacon.
+			Apple has developed a protocol called iBeacon. This iBeacon protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to a particular iBeacon. For example, when a blue-tooth device is placed near a kettle, the kettle will sense the presence of the phone and automatically switch on and boil the water.
 			\cite{_everything_????}
 		
 		\subsubsection{Choke point concepts}
-			Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. Many choke point sensors work with passive radio-frequency identification (RFID) tags which merely report a tags presence, as opposed to reporting distances or signal strengths.
+			\label{choke_points}
+			Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. These systems are only able to determine when a tagged object has passed through a choke point, and so rely on deducing an objects position based upon the choke points that object has passed through.
+			Many choke point sensors work with passive radio-frequency identification (RFID).
 			\cite{reza_investigation_2008}
 		
 		\subsubsection{Grid concepts}
-			Grid concepts employ a dense network of low-range receivers arranged in a predefined known pattern. A tagged object within the grid will be sensed by only a few nearby receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made. The tag would typically be a radio frequency identification (RFID) chip.
+			Grid concepts employ a dense network of low-range receivers arranged in a predefined known pattern or layout. A tagged object within the grid will be sensed by only a few nearby receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made. The tag would typically be a radio frequency identification (RFID) chip as with the choke point concepts described above in the section above.
 		
 		\subsubsection{Others}
-			Various other radio based systems exist but will not be discussed further. These include ultra-wide band (UWB), infra-red (IR), visible light communication, as well as ultrasound.
+			Various other radio based systems exist but will not be discussed further. These include systems based on ultra-wide band (UWB), infra-red (IR), visible light communication, as well as ultrasound technologies. All of these systems are common in that they are based on the principles described above in section \ref{radio_principles}.
 	
 	\section{Non-radio technologies}
 		Non-radio technologies which can be used for indoor positioning will be discussed in the subsections below. These systems can provide increased accuracy at the expense of increased costs of equipment as well as installation costs.
 	
 	\subsection{Magnetic positioning}
-		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
+		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in the buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
 		\cite{supreeth_sudhakaran_geospatial_2014}
 		
 		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. The company provides a mobile application which enables a user to map out a particular building, and allows users to navigate the created map.
@@ -173,104 +175,136 @@
 	\subsection{Inertial measurements}
 		Inertial measurement units (IMUs) can be carried by an object in order to track the objects path through space. IMUs measure acceleration and orientation along three orthogonal axis using accelerometers and gyroscopes. Position can be determined by double integration of the acceleration measurements - this is a form of dead reckoning.
 		
-		Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over some time. This yields relative position estimations. 
+		Dead reckoning is the process of calculating ones current location by using previously determined positions with estimated speed and orientation over time. This yields relative position estimations. 
 		
-		Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems in order to correct for this drift.
+		Dead reckoning is subject to what is known as drift which is an accumulation of errors. Due to the susceptibility of IMUs to drift, they are often used in conjunction with other positioning systems such as GPS in order to correct for this drift.
 
 \newpage
 \chapter{Method}
-	There are two main requirements for this alternate indoor positioning method. The first requirement is to have a 3D model of an environment, the second requirement is a photograph of a scene within that environment. The premise is that the photograph can be matched against the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer. The focus of this paper is on the comparison of the photograph and the 3D model.
+	There are two main requirements for this alternate indoor positioning method. The first requirement is a 3D model of an environment. The second requirement is a photograph of a scene within that environment. The premise is that the photograph can be related to the 3D model in order to determine where the photograph was taken within that 3D model, thus locating the photographer.
 	
-	The querying of the photograph against the model presents a problem. The problem is that the photograph and the 3D model are not intrinsically comparable. So how does one compare an image to a 3D model? A solution to this problem is to create renderings throughout the model and compare these renderings to the photograph. These renders are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching.
+	For example, consider a hypothetical building with two rooms, A and B. A person standing in one of the two rooms would like to know which room they are standing in. The person takes a photograph of the room they are in. This photograph will then be compared against a 3D model in order to determine where the scene captured in the photograph exists within the 3D model.
+	
+	The comparison of the photograph against the 3D model presents a problem. The problem is that the photograph and  3D model are not intrinsically comparable. So how does one compare an image to a 3D model? One solution to this problem is to create renderings throughout the 3D model and compare these renderings to the photograph. These renders are themselves images and so this permits the use of advanced and robust image recognition software to perform the matching. The focus of this paper is on the comparison of the photograph to the 3D model using image recognition software.
 	
 	In the following sections, the processes of creating a 3D interior model, taking a photograph and comparing a photograph to renders of the 3D model will be discussed in detail.
 	
 	\section{Photograph}
-		In this alternate indoor positioning system, a photograph will be taken by a person who wishes to know their location within an indoor environment, which will have an associated 3D model. The photograph will typically be taken from a mobile device such as a smart phone or tablet.
+		In this alternate indoor positioning system, a photograph will be taken by a person or object who wishes to know their location within an indoor environment. This indoor environment will have an associated 3D model. The photograph will typically be taken from a mobile device such as a smart phone or tablet.
 	
 	\newpage
 	\section{The 3D model}
-		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized computer software. The product of this process is called a 3D model. A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system. In the subsections to follow, the process of creating a 3D model and associated renderings will be discussed and detailed.
+		3D modelling can be described as the process of developing a mathematical representation of a three dimensional space using specialized computer software. The product of this process is called a 3D model. 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{3d_interior_model}
+			\caption[3D interior model]{A 3D interior model of a sitting room.(homecg.com)}
+			\label{fig:3d_interior_model}
+		\end{figure}
+		
+		A 3D model can be visualized as a two dimensional image through a process called 3D rendering. It is this two dimensional image representation which is utilized in order to perform the comparison to a photograph in this alternate indoor positioning system.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{rendered_3d_model}
+			\caption[3D interior model]{A rendered 3D interior model of a sitting room.(3docean.net)}
+			\label{fig:rendered_3d_model}
+		\end{figure}
+		
+		In the subsections to follow, the process of creating a 3D model and associated renderings will be discussed and detailed.
 		
 		\subsection{Creating a 3D model}
-			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender. 
-			In order to accurately model an existing eprecedentnvironment, raw data such as measurements or point clouds is needed to serve as a basis for the model creation. The raw data serves as the initial building block and reference for the model.
+			3D models can be created automatically or manually. Examples of automatic techniques include structure from motion. Manual creation of 3D models involves construction by hand using advanced computer software such as Blender. Manual creation of 3D models typically yields more detailed and accurate models. 
+			In order to accurately model an existing environment, raw data such as measurements or point clouds is needed in order to serve as a basis for the model creation. The raw data serves as the initial building block and reference for the construction of the 3D model.
 		
 			\subsubsection{Data acquisition}
-				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference.
+				In order to create an accurate 3D model of a building, data is required in order to aid the modelling process and serve as a template or reference for the 3D model.
 				This data can come in the form of building plans, measured distances and directions or point clouds etc.
-				Creating a model from building plans or other measurements involves defining model features in terms of parameters.
-				It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the physical real-world environment.
-				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points  within the point cloud.
+				Creating a model from building plans or other measurements involves defining model features in terms of parameters. It is often the case that the measurements or plans do not accurately reflect the real-world environment in which case the created model may contain inaccuracies when compared to the real-world case. It is for this reason that point clouds are preferable, as point clouds will more accurately represent the physical real-world environment.
+				Point clouds are typically created using laser scanners.
+				Creating a model from a point cloud involves creating vertices, lines and faces based on the positions of points within the point cloud. More on this in the sections to follow.
 				
 			\subsubsection{Data preprocessing}
 				\paragraph{Cleaning laser scan point clouds}
 					\subparagraph{Irrelevant points}
-						During a scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous in a particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
+						During a laser scan, it often happens that a scanner captures points which are irrelevant. These irrelevant points may be points which are considered unneeded or erroneous for particular scan. Typical examples of cases leading to irrelevant points are people walking through a scan, reflections of the scanners laser beam off of surfaces, or points from objects which are generally deemed irrelevant or unneeded.
 						
 						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{uncleaned_point_cloud}
-							\caption{Raw point cloud containing irrelevant points}
+							\caption[Raw point cloud]{Raw point cloud containing irrelevant points}
 							\label{fig:uncleaned_point_cloud}
 						\end{figure}
 						
-						In order to treat these irrelevant points within a point cloud, a point cloud can be cleaned. Cleaning can be performed manually by selectively removing irrelevant points, or automatically be defining some criterion by which points which should be removed.
+						These irrelevant points need to be removed from the point cloud. The removal of irrelevant points from a point cloud is typically referred to as cleaning.
+						Cleaning can be performed manually by selectively removing irrelevant points using computer software, or automatically be defining some criterion by which points which should be removed.
 					
 						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{cleaned_point_cloud}
-							\caption{Cleaned point cloud containing with removed irrelevant points}
+							\caption[Cleaned point cloud]{Cleaned point cloud with irrelevant points removed}
 							\label{fig:cleaned_point_cloud}
 						\end{figure}
 						
 					\subparagraph{Down sampling}
-						Due to laser beam divergence or the scanners laser, points nearer to the scanner are packed more densely than those farther away. The density decreases radially from the scanners location.
+						Due to laser beam divergence of scanners laser, points nearer to the scanner are packed more densely than those further away. The density of the points decreases radially from the scanners location.
 						
 						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{dense_point_cloud}
-							\caption{Raw point cloud has a high point density near the location of the scanner}
+							\caption[Dense point cloud]{Raw point cloud has a high point density near the location of the scanner. The point density decreases radially from the scanners location.}
 							\label{fig:dense_point_cloud}
 						\end{figure}
 						
-						It is often unnecessary to have the points packed at such a high density as the high density adds very little information to the overall point cloud. A process known as down sampling can be performed on a point cloud in order to make the point density more uniform. Down sampling works by iteratively removing points which fall within a specified distance of other points in a point cloud. The end result is that the point cloud's file size, and the computational effort required to visualize and manipulate the point cloud is greatly reduced.
+						Figure \ref{fig:dense_point_cloud} shows a point cloud with a high density near the scanners location. Most of the points near the scanner in the high density area are superfluous.
+						
+						It is often unnecessary to have the points packed at such a high density as the high density adds very little additional information to the overall point cloud. A process known as down sampling can be performed on a point cloud in order to make the point density more uniform. Down sampling works by iteratively removing points which fall within a specified distance of other points in a point cloud. The end result is that the point cloud's file size, and the computational effort required to visualize and manipulate the point cloud is greatly reduced.
 						\cite{_selection_????}
 						
 						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{uniform_point_cloud}
-							\caption{Down sampling yields a uniformly dense point cloud}
+							\caption[Down sampled point cloud]{Down sampling yields a uniformly dense point cloud.}
 							\label{fig:uniform_point_cloud}
 						\end{figure}
 						
-						Figure \ref{fig:dense_point_cloud} shows a point cloud with a high density near the scanners location. Most of the points near the scanner in the high density area are superfluous.
-						
-						Figure \ref{fig:uniform_point_cloud} shows a point cloud after a down sampling operation.
+						In contrast to figure \ref{fig:dense_point_cloud}, figure \ref{fig:uniform_point_cloud} shows a point cloud after a down sampling operation.
 				
-			\subsubsection{Constructing the model}
+			\subsubsection{Constructing the 3D model}
 				Solid modelling is a consistent set of principles for mathematical and computer modelling of three-dimensional solids which forms the foundation of computer-aided model design. 
 				\cite{vadim_shapiro_solid_2001}
-				3D models can be created using various solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of consistent data structures. A model may be created using any number of combinations of solid representation schemes.
+				3D models are created using what are known as solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of consistent data structures. A model may be created using any number of combinations of solid representation schemes. Some relevant schemes will be discussed in the sections to follow.
 				
 				\paragraph{Boundary representation (B-rep)}
-					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices. As a result of boundary representation modelling objects using limits, boundary representation lends itself to accurately modelling imperfections and inconsistencies.
+					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices. As a result of boundary representation modelling objects using limits, boundary representation lends itself to accurately modelling imperfections and inconsistencies of real-world features.
 					\cite{hongxin_zhang_introduction_2007}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=1\textwidth]{brep}
+						\caption[Boundary representation]{Boundary representation represents objects using vertices (V), edges (E) and faces (F). (homepages.inf.ed.ac.uk)}
+					\end{figure}
 				
 				\paragraph{Constructive solid geometry (CSG)}
-					Constructive solid geometry is a solid representation scheme which works by creating complex objects using boolean operators or primitive objects. Primitive objects are the simplest type of objects and are used to create more complex objects by performing operations such as unions, intersections and differences.
+					Constructive solid geometry is a solid representation scheme which works by creating complex objects using boolean operators of what are known as primitive objects. Primitive objects are the simplest type of objects and are used to create more complex objects by performing operations such as unions, intersections and differences.
 					\cite{foley_computer_1996}
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=1\textwidth]{csg}
+						\caption[Constructive Solid Geometry]{Constructive Solid Geometry subtraction of two primitives to form a new object. (cadd.web.cern.ch)}
+					\end{figure}
 				
-		\subsection{Level of detail of the model}
+		\subsection{Level of detail of the 3D model}
 			In terms of 3D modelling, level of detail refers to how thoroughly real-world objects have been modelled and how closely those modelled objects resemble their real-world counterparts.
 			
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=1\textwidth]{level_of_detail_example}
-				\caption{Level of detail example (http://www.in-ex.hu/)}
+				\caption[Level of detail]{Level of detail example. (www.in-ex.hu)}
+				\label{fig:lod}
 			\end{figure}
 			
-			The figure above illustrates the concept of level of detail. A sphere has been modelled at various levels of detail, decreasing from left to right. Models with a low level of detail are quicker to create and less computationally intensive to manipulate, high level of detail models take longer to create but increase the quality of the model.
+			Figure \ref{fig:lod} above illustrates the concept of level of detail. A sphere has been modelled at various levels of detail, decreasing from left to right. Models with a low level of detail are quicker to create and less computationally intensive to manipulate, high level of detail models take longer to create but increase the quality of the model.
 				
 			\subsubsection{Lighting}
 				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a model as well as its overall accuracy. When creating the model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail below.
