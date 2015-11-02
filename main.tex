@@ -309,7 +309,7 @@
 			%TODO: Continue working from here
 			
 			\subsubsection{Lighting}
-				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a model as well as its overall accuracy. When creating the model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail below.
+				Lighting is a very important component of any 3D model. Lighting can drastically alter the appearance of a 3D model as well as its overall accuracy in terms of how realistic it is. When creating the 3D model for this investigation, a great deal of attention was paid to lighting. Each consideration is discussed in detail in the sections to follow.
 				
 				\paragraph{Light source}
 					When modelling light sources, there are a few considerations which need to be made, they are detailed in the paragraphs which follow.
@@ -318,46 +318,41 @@
 						\begin{figure}[H]
 							\centering
 							\includegraphics[width=1\textwidth]{colour_temperature}
-							\caption{Colour temperatures (http://www.seesmartled.com/)}
+							\caption[Colour temperatures]{Colour temperatures (seesmartled.com)}
+							\label{fig:colour_temp}
 						\end{figure}
-						The figure above shows how colour temperatures relate to real world conditions.
+						Figure \ref{fig:colour_temp} above shows how colour temperatures relate to real world conditions.
 				
 					\subparagraph{Position of lights}
-						%TODO: Use better images
-						In order to accurately replicate shadows and intensities of real-world conditions, the lighting in a 3D model needs to be strategically placed as well as calibrated in order to best reflect the real-world conditions.
+						In order to accurately replicate shadows and intensities of real-world conditions, the light sources in a 3D model needs to be strategically placed as well as calibrated in order to best reflect the real-world conditions in terms of shadows and reflections.
 						
 						\begin{figure}[H]
 							\centering
-							\includegraphics[width=0.6\textwidth]{overhead_lights}
-							\caption{Overhead florescent lights}
-						\end{figure}
-						\begin{figure}[H]
-							\centering
-							\includegraphics[width=0.6\textwidth]{lights_behind_door}
-							\caption{Emmisive planes behind door replicate sunlight}
+							\includegraphics[width=1\textwidth]{light_glare}
+							\caption[Light glare]{Notice the glare from the ambient light on the floor and head board of the bed and surrounding walls. (architecturalmodelingindia.com)}
 						\end{figure}
 					
 					\subparagraph{Light intensity}
-						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real world lighting intensities in a model, each light source needs to be adjusted individually and judged by visual inspection to best model the real-world light conditions.
+						Luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction. In order to accurately model the real-world lighting intensities in a 3D model, each light source needs to be adjusted individually and judged by visual inspection to best model the real-world light conditions.
 						
 			\subsubsection{Texture}
 				Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
 				\cite{e._paul_degarmo_materials_2003}
-				Textures are applied to surfaces in 3D models in order to accurately represent real-world textures. Textures affect not only the visual appearance of a surface, but also the way light interacts with that textured surface.
+				Textures are applied to surfaces in 3D models in order to accurately represent real-world textures. Textures affect the visual appearance of a surface as well as the way light interacts with that textured surface. Various texture profiles are often built into 3D modelling software. For example, pre-made textures for wood and concrete exist and can be places on floors and walls.
 			
 		\subsection{Renderings of the model}
 			Rendering can be described as the process of generating an image from a 2D or 3D model by means of computer programs. Renders can either be generated in real-time, or pre-rendered.
 			
-			Blender offers three built in render engines: Blender Render, Cycles Render, and Game Render.
-			
-			Renders of the 3D model will be created using the different renderer engines, and under various different render settings. The effect of altering the render settings will be a subject of investigation.
+			The software used to create the 3D model in this investigation is Blender. Blender offers three built in render engines: Blender Render, Cycles Render, and Game Render, various other render engines are available. Each have their own positives and negatives. One of the common trade offs between render engines is render time and quality.
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.9\textwidth]{gtl_render_1}
-				\caption{GTL Render}
-				\label{fig:gtl_render_1}
+				\includegraphics[width=1\textwidth]{render_engines}
+				\caption[Comparison of render engines]{Six tiles showing a comparison of render engines. The name of each render engine is displayed in the top right corner of each tile. The time taken for the render to complete is on the bottom right of each tile. (blenderguru.com)}
+				\label{fig:render_engines}
 			\end{figure}
+			
+			Renders of 3D models can be created using different renderer engines, and under various different render settings. The effect of altering the render engine and settings will be a subject of investigation.
 			
 	\section{Comparison of the model to the photograph}
 		This section deals with the comparison of the photograph to the render of the 3D model.
@@ -368,12 +363,12 @@
 			\subsubsection{Feature matching}
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.9\textwidth]{feature_homography_example}
-					\caption{Feature homography (http://docs.opencv.org/)}
+					\includegraphics[width=1\textwidth]{feature_homography_example}
+					\caption[Feature homography]{Feature homography (docs.opencv.org)}
 					\label{fig:feature_homogrophy}
 				\end{figure}
 				
-				The figure above (Figure \ref{fig:feature_homogrophy}) illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image. An algorithm has drawn a green box around where it thinks the test image lies within the query image. This green box is defined by a transformation relating it to the test image. The process of performing the comparison will be discussed in detail in the sections to follow.
+				Figure \ref{fig:feature_homogrophy} above illustrates the process of comparing a test image to a query image. The figure contains two images, one test image on the left side which is the cover of a rusk box. On the right is the query image. The query image is a more complex scene, which contains the test image within it. Here, the test image has been detected within the query image. An algorithm has drawn a green box around where it thinks the test image lies within the query image. This green box is defined by a transformation relating it to the test image. The process of performing the comparison will be discussed in detail in the sections to follow.
 			
 			\subsubsection{Key points}
 				The first step involved in performing a comparison requires determining what are known as key points (or features) within an image. Key points represent specific patterns or features which are unique, can be easily tracked, and can be described and compared.
@@ -382,51 +377,59 @@
 				
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.9\textwidth]{feature_building}
-					\caption{Feature building (docs.opencv.org)}
+					\includegraphics[width=1\textwidth]{feature_building}
+					\caption[Key points]{Key point demonstration (docs.opencv.org)}
 					\label{fig:feature_building}
 				\end{figure}
 				
-				The image is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point (feature). We now want to be able to find the exact location of these blocks within the original image. 
-				Blocks A and B depict flat surfaces, they are spread over a large area and so it is difficult to find an exact location of these blocks within the image, that is that there are a number of locations where these blocks could fit, so they are not unique.
-				Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge, but it is still impossible to pinpoint exactly where they are from.
+				Figure \ref{fig:feature_building} is of a large building complex. At the top of the image there are six alphabetically labelled blocks. Each block contains a section of the entire image and can be thought of as a key point (feature). We now want to be able to find the exact location of these blocks within the original image. 
+				Blocks A and B depict flat surfaces, they are spread over a large area within the image and so it is difficult to find an exact location of these blocks within the image, that is that there are a number of locations where these blocks could fit, so they are not unique.
+				Blocks C and D are slightly better in that they are the edges of the building, they could be from anywhere along the edge of the roof of the building, but it is still impossible to pinpoint exactly where they are from.
 				Blocks E and F are the corners of the building. The locations of these blocks can be exactly found and so these would be good key points as they are unique.
 			
 			\subsubsection{Finding key points}
-				The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when moved in all directions. This process will be discussed in more detail below.
+				The process of finding key points in an image is called feature detection. On a high level, the process works by looking for regions within an image which have large variation when that region is moved in various directions. This process will be discussed in more detail below.
 				
 				Consider the image below:
 				
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{feature_detection}
-					\caption{Feature detection (http://docs.opencv.org)}
+					\caption[Feature detection]{Feature detection example (docs.opencv.org)}
 				\end{figure}
 				
 				In the figure above, the green rectangle represents an image and each red, blue and black rectangle represents a region for feature detection. When moving the blue rectangle vertically or horizontally by small amounts, there is no variation, the blue box still contains only green. This represents a poor feature/key point. 
-				When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is (The ratio of white and green changes). When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. So corners are typically good features.
+				When moving the black rectangle horizontally, there is also no variation, however when moving it vertically there is (The ratio of white and green changes with this movement). When moving the red rectangle in any direction there is high variation, so this would be a good feature/key point. So corners are typically good features.
 				
 			\subsubsection{Describing key points}
 				Once key points have been identified, they need to be described. The purpose of describing the key points is to enable the comparison of key points across different images. The idea is that a real-world point will have a similar key point description within all the images which capture the same real-world point.
 				
 			\subsubsection{Matching key points}
-				The final step of the comparison process is that of matching key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of any two key points exceeds some threshold, the compared key points are considered a match which would ideally imply that they are the same real-world point.
+				The final step of the comparison process is that of matching key points. The concept here is that key points from separate images are individually compared against each other. If the similarity of the description of any key points exceeds some threshold, the compared key points are considered a match which would imply that they are the same real-world point.
 		
-		\subsection{Comparing}
+		\subsection{Comparing a photograph to a 3D model}
 			Now that concepts of feature detection and feature matching have been introduced, the application of the image comparison process to the objectives of this paper can be discussed.
+			
 			In the context of this proposed new indoor positioning technique, the test image would be a photograph that a user has supplied who wishes to know their location within an environment. The query image would be one of many renders of the 3D model of that same environment.
 			
-			The idea is that the test image could be compared to a number of renders from different locations within the environment. Once a quality comparison is made, the location of the photographer can be determined using photogrammetric techniques, or by using georeferenced renders, however this is outside of the scope of this paper, but will be further discussed in the future work chapter below.
+			The idea is that the test image (photograph) could be compared to a number of renders (query images) from different locations within the environment. Once a quality comparison is made, the location of the photographer can be determined using photogrammetric techniques, or by using georeferenced renders, however this is outside of the scope of this paper, however this will be further discussed in the future work chapter below.
+			
+			\subsubsection{Comparison metrics}
+				There are two metrics which will be used to indicate the quality of a comparison. The first is that of the number of matches determined in a comparison.
+				The second metric is that of the quality of the matches, in other words, how true the matches are or represent the same feature.
 	
 	\section{Tools}
 		\subsection{OpenCV}
-			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features and functions, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features module (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders. 
+			OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at computer vision. OpenCV was originally developed by Intel in Russia. OpenCV offers a large range of features and functions, including an image processing module, GUI module, camera construction and 3D reconstruction module, a 2D features framework module as well as many others. The 2D features module (features2d) was used in this investigation to facilitate the comparison of the photograph to the renders.
+		\subsection{Python}
+			Python is a computer programming language which was created in 1991 by a Google employee, Guido van Rossum. For this investigation, a framework was created in Python in order to facilitate the outcomes of this investigation.
 
 	\section{Test parameters}
 	\label{test_parameters}
 		%TODO: This entire sections needs some attention
 		There are various actions which can be performed on the model, rendered image and photograph which may influence the accuracy of, and the number of matches obtained during a comparison. These actions and their result on the accuracy of the matches are to be a subject of investigation. These actions are discussed below.
 		
+		%TODO: This subsection could use enumerates.
 		\subsection{Model adjustments}
 			\subsubsection{Level of detail}
 				The level of detail of the model can be adjusted.
@@ -439,6 +442,7 @@
 		
 		\subsection{Renders}
 			Render settings can be adjusted.
+			Different render engines can be used.
 			
 		\subsection{Image enhancements}
 			A number of image enhancement processes can be performed on the photograph as well as on the rendered image. These processes will be discussed in subsections to follow.
@@ -447,7 +451,7 @@
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.6\textwidth]{gaussian_blur}
-					\caption{Gaussian blur example (Source: wikipedia.org)}
+					\caption[Gaussian blur]{Gaussian blur smooths pixels in an image. (wikipedia.org)}
 					\label{fig:gaussian_blur}
 				\end{figure}
 			
@@ -456,10 +460,11 @@
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.9\textwidth]{edge_detection}
-					\caption{Edge detection example (Source: wikipedia.org)}
+					\caption[Edge detection]{Edge detection highlights edges in an image. An edge represents areas in an image where there is a steep pixel value gradient. (Source: wikipedia.org)}
 					\label{fig:edge_detection}
 				\end{figure}
-				
+		
+		%TODO: Complete this.
 		\subsection{Comparison process}
 			\subsubsection{Feature Detectors}
 				\paragraph{SIFT}
@@ -470,9 +475,7 @@
 				\paragraph{FLANN}
 
 \chapter{Results}
-	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
-	
-	%TODO: Explain why GTL was selected
+	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match, facilitating this investigation. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
 	
 	\section{Photograph}
 		The test photograph for this investigation is of the front door section of the Geomatics Teaching Laboratory (GTL). The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
@@ -482,15 +485,25 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1\textwidth]{gtl_door_area}
-			\caption{GTL Door area}
+			\caption[GTL test image]{GTL Door area}
 		\end{figure}
 		
 	\section{3D model}
-		The model was created in an open source software package called Blender.
+		The 3D model for this investigation was created using an open source software package called Blender. The 3D model contained the front and right walls of the GTL room, which the door section in between the two walls.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{model_with_increased_detail}
+			\caption[3D model]{Focus area for this investigation. The model has been constructed using the point could (in black)}
+			\label{fig:gtl}
+		\end{figure}
+		
+		The phases involved in creating the 3D model are detailed below.
 		
 		\subsection{Creating the 3D model}
 			\subsubsection{Data acquisition}
-				In order to accurately model the scene of interest, a laser scan of GTL was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was taken which captured the entire room. The scan was carried out using a {{laser Scanner model}} at {{laser scanner settings, resolution etc}}. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
+				%TODO: Enter laser scanner details.
+				In order to accurately model the scene of interest, a laser scan of GTL was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was taken which captured the entire room. The scan was carried out using a {{laser Scanner model}} at medium settings. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
 				\begin{figure}[H]
 					\centering
