@@ -475,7 +475,7 @@
 
 \chapter{Results}
 	%TODO: This is a bit kak.
-	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match, facilitating this investigation. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
+	The Geomatics Teaching Laboratory (GTL) has been used as the subject for this investigation. Specifically the front door section of the Geomatics Teaching Laboratory was used as the basis of this investigation. The Geomatics Teaching Laboratory is located on the fifth floor of the Menzies building at UCT. The section under investigation is the south east corner of the room and was selected as there are a number of favourable features which are expected to maximize the chances of a high quality match, facilitating this investigation. Some of these favourable features include the whiteboard, doors, skirting, air-conditioner vents as well as the double lipped corner with a conduate running along an edge.
 	
 	\section{Photograph}
 		The test photograph for this investigation is of the front door section of the Geomatics Teaching Laboratory (GTL). The scene consists of a air-conditioning duct on which there is a vent. On the left of the image is a section of a pin board, which contains a number of newspaper clippings. In the centre of the image is the corner of the room. The corner is relatively complex with a number of conduates running to the floor, with an electrical plug box. The blue doors are symmetrical with the exception of the bottom panels where the right hand door as a black ventilation panel. The other three panels are semi transparent glass panes which allow diffused light to enter the room.
@@ -485,11 +485,11 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1\textwidth]{gtl_door_area}
-			\caption[GTL test image]{GTL Door area}
+			\caption[GTL test image]{GTL door area which will be the subject of this investigation.}
 		\end{figure}
 		
 	\section{3D model}
-		The 3D model for this investigation was created using an open source software package called Blender. The 3D model contained the front and right walls of the GTL room, which the door section in between the two walls.
+		The 3D model for this investigation was created using an open source software package called Blender. The 3D model contains the front and right walls of the GTL room, which the door section in between the two walls.
 		
 		\begin{figure}[H]
 			\centering
@@ -502,7 +502,6 @@
 		
 		\subsection{Creating the 3D model}
 			\subsubsection{Data acquisition}
-				%TODO: Enter laser scanner details.
 				In order to accurately model the scene of interest, a laser scan of GTL was conducted. The laser scanner was placed roughly in the centre of the room and a single scan was taken which captured the entire room. The scan was carried out using a ZF 5010C laser scanner at medium settings. The laser scan yielded a high resolution point cloud which would serve as the basis for the 3D model construction.
 				
 				\begin{figure}[H]
@@ -512,14 +511,14 @@
 				\end{figure}
 				
 			\subsubsection{Data preprocessing}
-				The point cloud in question was manually cleaned in a software program called CloudCompare. The purpose of cleaning the point cloud is to remove erroneous and superfluous data in order to increase the manageability of working with the point cloud.
+				The point cloud was manually cleaned in a software program called CloudCompare. The purpose of cleaning the point cloud is to remove erroneous and superfluous data in order to increase the manageability of working with the point cloud.
 	
 				The first step cleaning the point cloud involved cutting out the sections which were not to be part of this investigation. This trivial process was performed in a software package called CloudCompare.
 				
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=1\textwidth]{trimmed_point_cloud_1}
-					\caption{Trimmed point cloud}
+					\caption[Trimmed point cloud]{Trimmed point cloud where irrelevent and uneedd points have been removed using CloudCompare.}
 				\end{figure}
 				
 				The second step in cleaning the point cloud involved removing points which existed outside of the rooms confines, such as points outside of the glass panels of the door.
@@ -528,45 +527,41 @@
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=1\textwidth]{cleaned_point_cloud_1}
-					\caption{Cleaned point cloud}
+					\caption[Cleaned point cloud]{Cleaned point cloud with erronous points removed.}
 				\end{figure}
  
-				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud. This was found to be 7mm and was an acceptable resolution for use throughout the entire scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
+				The last step in the cleaning process involved making the point cloud uniform in density or resolution. This was done by determining the lowest resolution within the remaining section of the point cloud, this was found to be 7mm and was an acceptable resolution for use throughout the entire scene. So the entire point cloud was down sampled to a resolution of 7mm. This removed superfluous points and considerably reduced the file size of the point cloud.
 				
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=1\textwidth]{uniform_point_cloud_1}
-					\caption{Uniform point cloud}
+					\caption[Down sampled point cloud]{Down sampled point cloud with a resolution of 7mm.}
 				\end{figure}
 			
 			\subsubsection{Model construction}
-				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme. It is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
+				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme which is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
 				\cite{hongxin_zhang_introduction_2007}
-				Boundary representation was selected as the solid representation scheme as it is very well suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfections which leads to a model which is overall more accurate, in that the model more accurately represents the real-world features.
+				Boundary representation was selected as the solid representation scheme as it is very well suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfections which leads to a 3D model which is overall more accurate, in that the model more accurately represents the real-world features.
 				
-				The accuracy of the model is an important consideration for this investigation. The model was constructed as accurately as possible in order to maximise the chances of obtaining good quality matches, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
+				The accuracy of the model is an important consideration for this investigation. The model was constructed as accurately as possible in order to maximise the chances of obtaining good quality matches in the comparison process, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
 				
 				The software used to create and manipulate the 3D model was Blender. Blender is a free and open-source computer graphics software product. The cleaned point cloud was loaded into Blender and faces were attached to points in order to create the outline of the room, the outline consisted of the four surrounding walls, floor and ceiling. 
-				
-				{Insert image of simple model}
 				
 				With the extremities constructed, finer features and details were iteratively added to the model, this included the white boards on the walls, the skirting along the bottom of the walls, as well as conduates and electrical plug points, as well as the door section.
 				
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.9\textwidth]{simple_model_with_pc}
-					\caption{Walls, floor and air-conditioning duct modelled from the point cloud}
+					\includegraphics[width=1\textwidth]{simple_model_with_pc}
+					\caption[Point cloud construction]{Walls, floor and air-conditioning duct modelled from the point cloud to form the basis of the 3D model.}
 					\label{fig:simple_model}
 				\end{figure}
 				
-				In figure \ref{fig:simple_model} the walls and floor of the room have been modelled off of the point cloud. 
-				
-				Detail of the model was iteratively increased by modelling the finer details.
+				In figure \ref{fig:simple_model} the walls and floor of the room have been modelled off of the point cloud. Detail of the model was iteratively increased by modelling the finer details.
 				
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.9\textwidth]{model_with_increased_detail}
-					\caption{Model with increased detail}
+					\includegraphics[width=1\textwidth]{model_with_increased_detail}
+					\caption[Detailed model]{Model with increased detail including the doors, white boards and electrical conduate.}
 					\label{fig:more_complex_model}
 				\end{figure}
 				
@@ -574,7 +569,6 @@
 				
 		\subsection{Level of detail of the 3D model}
 			\subsubsection{Objects}
-			%TODO: Refer to actual section. 'More on this later.'
 				As many objects as possible have been modelled to the best possible detail. This is done in order to facilitate investigating the effects of the number of objects and the level of detail of these objects on the quality and number of matches in the comparison process. The investigation will cover multiple level of details in order to document the affect. More on this later.
 				
 			\subsubsection{Lighting}
@@ -582,13 +576,13 @@
 			
 				Much attention was given to the lighting within the model. This included accurately representing real-world lighting conditions within the model itself. The intensity, colour temperature and locations of light sources are all very important considerations when creating accurate 3D models.
 				
-				An important consideration for lighting with regards to this investigation is that lighting can vary. This includes the the variation of natural light over the diurnal cycle as well as variations due to weather conditions. Variations in artificial lighting is also important, such variations include lights being switched on or off, varying brightness etc.
+				An important consideration for lighting with regards to this investigation is that lighting can vary. This includes the the variation of natural light over the diurnal cycle as well as variations due to weather conditions. Variations in artificial lighting is also an important factor, such variations include lights being switched on or off, bulbs blowing or varying brightness etc.
 				
 				\paragraph{Overhead lights}
-					Overhead lights consisted of panels of florescent lights uniformly spaced throughout the ceiling. The each panel contained three fluorescent tubes. Theses light panels were reconstructed in the model and mimicked using emmisive planes subtended within a rectangle.
+					Overhead lights consisted of panels of florescent lights uniformly spaced throughout the ceiling. The each panel contained three fluorescent tubes. These light panels were reconstructed in the model and mimicked using emmisive planes subtended within a rectangle.
 					
 					The overhead lights have been placed in their respective real-world positions. 
-					
+					%TODO: Continue from here
 					{{Image of modelled florescent lights}}
 				
 				\paragraph{Natural lighting}
