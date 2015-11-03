@@ -5,10 +5,13 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
-\usepackage[backend=bibtex,style=authoryear-ibid]{biblatex}
+
+\usepackage{natbib}
+\bibliographystyle{agsm}
+
+\usepackage{parskip}
 
 \graphicspath{{./images/}}
-\addbibresource{sources.bib}
 
 \title{Indoor positioning using the comparison of digital imagery to 3D models}
 \date{2015}
@@ -143,7 +146,7 @@
 			Time of arrival (or time of flight) is the travel time of a radio signal from a single transmitter to a single remote receiver. The basic observable is change in time. A distance can be directly calculated using the known propagation velocity of signals with the basic observable of change in time. Location can then be determined using multi-lateration, this requires a setup of at least one receiver and three transmitters or vise versa.
 			Required with such systems is the synchronization of clocks between receivers and transmitters in order to correctly determine the propagation time of the signals from node to node.
 			A significant pitfall of time of travel systems is that they suffer greatly from effects such as multi-path in which signals are reflected off nearby objects and sensed multiple times.
-			\parencite{k._pahlavan_wideband_1998}
+			\cite{k._pahlavan_wideband_1998}
 			
 			Figure \ref{fig:time_of_arrival} demonstrates the concept of time of arrival. The figure shows three transmitters with a single receiver in the centre of the transmitters. A radius is determined for each transmitter by calculating a distance using the known propagation velocity and measured change in time (received time - transmitted time). Tri-lateration is then used to determine a unique location of the receiver.
 		
@@ -177,19 +180,19 @@
 			These techniques also suffer due to objects such as walls and floors which attenuate and reflect signals, directly affecting accuracies.
 		
 			An alternative Wi-Fi based geolocation method has been explored which makes use of relative signal strengths between transmitters and receivers. Instead of measuring the time or angle of received signals, the received signal strength is measured. This negates many of the above mentioned deficiencies as the received signal strength can be mapped out in order to improve accuracies and reliability. A similar system has been employed by animal trackers with directional antennas.
-			\parencite{yongguang_chen_signal_2002}
+			\cite{yongguang_chen_signal_2002}
 	
 		\subsubsection{Blue-tooth systems}
 			Blue-tooth positioning works by using proximities, as opposed to angulation or lateration. As such, exact locations are not attainable using this technology. Instead, the system acts more as a geofence and works by determining which node a device is currently connected to in order to determine the location of the device. Nodes typically do not have a great range and so in order to provide location services for an entire building, many nodes will need to be purchased and set up which has a high cost associated with it.
 		
 			Apple has developed a protocol called iBeacon. This iBeacon protocol makes use fo Blue-tooth proximity techniques in order to enable smart devices to perform actions when in close proximity to a particular iBeacon. For example, when a blue-tooth device is placed near a kettle, the kettle will sense the presence of the phone and automatically switch on and boil the water.
-			\parencite{_everything_????}
+			\cite{_everything_????}
 		
 		\subsubsection{Choke point concepts}
 			\label{choke_points}
 			Choke point systems work by locating and indexing tagged objects in order to track them. The concept works by passing tagged objects though a choke point (or gate), the choke point will then have a sensor which detects the tagged object passing through the gate. These systems are only able to determine when a tagged object has passed through a choke point, and so rely on deducing an objects position based upon the choke points that object has passed through.
 			Many choke point sensors work with passive radio-frequency identification (RFID).
-			\parencite{reza_investigation_2008}
+			\cite{reza_investigation_2008}
 		
 		\subsubsection{Grid concepts}
 			Grid concepts employ a dense network of low-range receivers arranged in a predefined known pattern or layout. A tagged object within the grid will be sensed by only a few nearby receivers. By determining which receivers and tag is sensed by, a rough approximation of the location of the tagged object can be made. The tag would typically be a radio frequency identification (RFID) chip as with the choke point concepts described above in the section above.
@@ -202,7 +205,7 @@
 	
 	\subsection{Magnetic positioning}
 		Magnetic positioning takes advantage of the way iron in buildings affects the Earth's magnetic field. The iron in the buildings creates local variations in the Earth's magnetic field which can then be sensed by compasses to map indoor locations. These local variations are mapped which then allows devices equipped with a compass to navigate and determine their locations within the indoor environment.
-		\parencite{supreeth_sudhakaran_geospatial_2014}
+		\cite{supreeth_sudhakaran_geospatial_2014}
 		
 		Indoor Atlas is a company which provides an indoor mapping service which makes use of these local variations of Earth's magnetic field. The company provides a mobile application which enables a user to map out a particular building, and allows users to navigate the created map.
 	
@@ -294,7 +297,7 @@
 						Figure \ref{fig:dense_point_cloud} shows a point cloud with a high density near the scanners location. Most of the points near the scanner in the high density area are superfluous.
 						
 						It is often unnecessary to have the points packed at such a high density as the high density adds very little additional information to the overall point cloud. A process known as down sampling can be performed on a point cloud in order to make the point density more uniform. Down sampling works by iteratively removing points which fall within a specified distance of other points in a point cloud. The end result is that the point cloud's file size, and the computational effort required to visualize and manipulate the point cloud is greatly reduced.
-						\parencite{_selection_????}
+						\cite{_selection_????}
 						
 						\begin{figure}[H]
 							\centering
@@ -307,12 +310,12 @@
 				
 			\subsubsection{Constructing the 3D model}
 				Solid modelling is a consistent set of principles for mathematical and computer modelling of three-dimensional solids which forms the foundation of computer-aided model design. 
-				\parencite{vadim_shapiro_solid_2001}
+				\cite{vadim_shapiro_solid_2001}
 				3D models are created using what are known as solid representation schemes. The common aim of these solid representation schemes is to organise modelled geometric and topological data in the form of consistent data structures. A model may be created using any number of combinations of solid representation schemes. Some relevant schemes will be discussed in the sections to follow.
 				
 				\paragraph{Boundary representation (B-rep)}
 					Boundary representation (B-rep) is a solid representation scheme which represents shapes using limits. In boundary representation, a solid is represented as a collection of connected surfaces. These surfaces are created using topological items: faces, edges and vertices. As a result of boundary representation modelling objects using limits, boundary representation lends itself to accurately modelling imperfections and inconsistencies of real-world features.
-					\parencite{hongxin_zhang_introduction_2007}
+					\cite{hongxin_zhang_introduction_2007}
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=1\textwidth]{brep}
@@ -321,7 +324,7 @@
 				
 				\paragraph{Constructive solid geometry (CSG)}
 					Constructive solid geometry is a solid representation scheme which works by creating complex objects using boolean operators of what are known as primitive objects. Primitive objects are the simplest type of objects and are used to create more complex objects by performing operations such as unions, intersections and differences.
-					\parencite{foley_computer_1996}
+					\cite{foley_computer_1996}
 					\begin{figure}[H]
 						\centering
 						\includegraphics[width=1\textwidth]{csg}
@@ -370,7 +373,7 @@
 						
 			\subsubsection{Texture}
 				Surface finish, also known as surface texture or surface topography, is the nature of a surface as defined by three characteristics of lay, surface roughness and waviness.
-				\parencite{e._paul_degarmo_materials_2003}
+				\cite{e._paul_degarmo_materials_2003}
 				Textures are applied to surfaces in 3D models in order to accurately represent real-world textures. Textures affect the visual appearance of a surface as well as the way light interacts with that textured surface. Various texture profiles are often built into 3D modelling software. For example, pre-made textures for wood and concrete exist and can be places on floors and walls.
 			
 		\subsection{Renderings of the model}
@@ -564,7 +567,7 @@
 			
 			\subsubsection{Model construction}
 				The 3D model in this investigation was created using a solid modelling technique called boundary representation (B-rep). Boundary representation is a solid representation scheme which is a method for representing shapes using limits or edges. In boundary representation, a solid is represented as a collection of connected surfaces. The surfaces themselves are created using topological items: faces, edges and vertices.
-				\parencite{hongxin_zhang_introduction_2007}
+				\cite{hongxin_zhang_introduction_2007}
 				Boundary representation was selected as the solid representation scheme as it is very well suited to modelling inconsistent or imperfect objects. For example, many objects in the scene appear to be perpendicular, but upon closer inspection it can be seen that very few corners are true, and very few edges are perfectly straight. Boundary representation lends itself to accurately modelling these imperfections which leads to a 3D model which is overall more accurate, in that the model more accurately represents the real-world features.
 				
 				The accuracy of the model is an important consideration for this investigation. The model was constructed as accurately as possible in order to maximise the chances of obtaining good quality matches in the comparison process, and to serve as a point of further investigation (by investigating the effects of model quality/accuracy on the quality and number of matches).
@@ -818,6 +821,9 @@
 		It is clear that the accuracy of the model and the quality of a comparison is positively correlated, that is that the greater the quality and accuracy of the model, the higher the quality of the comparison.
 		
 \newpage
-\printbibliography[title={References}]
+
+%\printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{sources} % This command creates the bibliography
 
 \end{document}
