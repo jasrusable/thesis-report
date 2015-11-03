@@ -787,10 +787,6 @@
 		Determining and describing the quality of matches poses a problem, and that is that it is difficult to programmatically quantify the quality of a match. To get around this problem, matches have been visually inspected in order to determine their quality.
 
 \chapter{Conclusions and future work}
-	Based on the results above, it is possible to compare a photograph to a 3D model by creating renderings of the model and using image comparison software compare photographs to renders of a 3D model.
-	
-	It is clear that the accuracy of the model and the quality of a comparison is positively correlated, that is that the greater the quality and accuracy of the model, the higher the quality of the comparison.
-	
 	\section{Improving and furthering the investigation}
 		\subsection{User Interface}
 			A user interface could be created which would simplify the operation and usability of the testing framework. The user interface could be constructed using the QT graphical toolkit.
@@ -800,11 +796,13 @@
 		
 	\section{Determining photographer's location}
 		The main focus of this paper is on the comparison process between a photograph and a 3D model. What has not been discussed in great detail is how the comparison will enable the location of the photographer to be determined. These two problems have been separated due to the fact that the determination of the photographers location will not be possible without a sufficiently high quality comparison result. Given that the results of this investigation have indicated that a high quality comparison is realistically achievable, future work could include actually using the comparison results data in order to determine from where inside the 3D model the photograph was take. Two possible methods for achieving this are briefly introduced in the subsections below.
+		
 		\subsection{Geotagging renders}
 			The most simple method of determining the photographers location would be to geotag each render of a series of renders of a 3D model. A photograph would then be compared against each render. The comparison with the highest quality will then be determined and the geotag of that render would indicate roughly where in the 3D model the photograph was taken, which would then sent to the photographer as their location.
 			There are a number of implementation problems which exist, some of the main problems are worth mentioning here.
 			The first problem is that as stated in section \ref{comparison_quality}, the quality of a comparison so far has not been able to be quantified. For the geotagging location method to be viable, a programmatic method of quantifying the quality of a comparison is needed.
 			Another problem is that of geotagging renders. This process needs to be done automatically in order to be viable.
+			
 		\subsection{Photogrammetric principles}
 			Another method for determining the photographers location involves making use of photogrammetric principles. Using the collinearity equations, a resection can be performed to determine the location of the camera.
 			\begin{figure}[H]
@@ -814,6 +812,11 @@
 				\label{fig:collinearity_equations}
 			\end{figure}
 			
+	\section{Conclusions}
+		Based on the results above, it is possible to compare a photograph to a 3D model by creating renderings of the model and using image comparison software compare photographs to renders of a 3D model.
+		
+		It is clear that the accuracy of the model and the quality of a comparison is positively correlated, that is that the greater the quality and accuracy of the model, the higher the quality of the comparison.
+		
 \newpage
 \printbibliography[title={References}]
 
